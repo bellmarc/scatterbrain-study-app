@@ -7,6 +7,7 @@ import TopicsList from './components/TopicsList';
 import InSession from './components/InSession';
 import Settings from './components/Settings';
 import Help from './components/Help';
+import Landing from './components/Landing'
 
 function App() {
     return (
@@ -17,7 +18,8 @@ function App() {
                 <Route path="/session" component={ InSession }/>
                 <Route path="/settings" component={ Settings }/>
                 <Route path="/help" component={ Help }/>
-                <Route path="/" component={ Onboarding }/>
+                <Route path="/onboard" component={ Onboarding }/>
+                <Route path="/" component={ Landing }/>
             </Switch>
         </div>
     )
