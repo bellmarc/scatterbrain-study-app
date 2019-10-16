@@ -3,7 +3,7 @@ const topicRouter = express.Router();
 const Topic = require('../models/topic.js')
 const User = require('../models/user.js')
 
-//dev users to connect to topics
+//dev users to connect to topics (these are dan's, you should make your own if you need to test)
 // [
 //     {
 //         "_id": "5da74084f1f54a4e0898b98f",
@@ -51,6 +51,24 @@ topicRouter.route('/')
         })
     })
 
+topicRouter.route('/pick')
+    .get((req, res, next) => {
+        Topic.find({userId: req.body.userId},(err, topics) => {
+            if (err) {
+                res.status(500)
+                return next(err)
+            }
+            const pickedId = weightedPick(topics)
+            Topic.findById(pickedId, (err, pickedTopic) => {
+                if (err){
+                    res.status(500)
+                    return next(err)
+                }
+                return res.status(200).send(pickedTopic)
+            })
+        })
+    })
+
 topicRouter.route('/:_id')
     .get((req, res, next) => {
         Topic.findById(req.params._id, (err, topic) => {
@@ -80,7 +98,15 @@ topicRouter.route('/:_id')
         })
     })
 
-//topicRouter.route('/pick')
+function weightedPick(topics){
+    const weightedArray = []
+    //add once chance for each unit of weight
+    topics.forEach(topic => {
+        weightedArray.push(Array(topic.currentWeight).fill(topic._id))
+    })
+    //random
+    return weightedArray[Math.floor(Math.random() * weightedArray.length)]
+}
 
 //topicRouter.route(/re-weight)
 module.exports = topicRouter
