@@ -14,7 +14,8 @@ app.use(express.json());
 app.use(morgan('dev'));
 
 //DB
-mongoose.connect(`mongodb+srv://${MONGO_USER}:${MONGO_PASS}@${MONGO_HOST}/${MONGO_DB}?retryWrites=true&w=majority`,
+// mongoose.connect(`mongodb+srv://${MONGO_USER}:${MONGO_PASS}@${MONGO_HOST}/${MONGO_DB}?retryWrites=true&w=majority`,
+mongoose.connect('mongodb://localhost:27017/scatterbraindb',
 {
     useNewUrlParser: true,
     useFindAndModify: true,
@@ -30,7 +31,7 @@ app.use("/users", require("./routes/userRouter.js"))
 app.use((err, req, res, next)=> {
     console.error(err)
     return res.send( {
-        errorMessage: error.message
+        errorMessage: err.message
     })
 })
 
