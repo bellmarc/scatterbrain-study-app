@@ -1,3 +1,8 @@
 .navbar {
+    display: flex;
+    justify-content: space-evenly;
     background-color: palegreen;
+}
+.navbar > li {
+    list-style: none;
 }
