@@ -14,8 +14,7 @@ const topicSchema = new Schema({
         default: 0
     },
     currentWeight: {
-        type: String,
-        required: true,
+        type: Number,
         default: 0
     },
     userId: {

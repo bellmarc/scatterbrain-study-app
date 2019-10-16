@@ -51,6 +51,7 @@ topicRouter.route('/')
         })
     })
 
+//pick weighted topic from user. Requires userId in req.body
 topicRouter.route('/pick')
     .get((req, res, next) => {
         Topic.find({userId: req.body.userId},(err, topics) => {
@@ -66,6 +67,36 @@ topicRouter.route('/pick')
                 }
                 return res.status(200).send(pickedTopic)
             })
+        })
+    })
+
+//re-weight user's topics after one is completed.
+//requires userId and topicId of topic that was completed in req.body
+topicRouter.route('/sessionComplete')
+    .put((req, res, next) => {
+        Topic.find({userId: req.body.userId}, (err, topics) => {
+            topics.forEach(topic => {
+                if (topic.id === req.body.topicId){
+                    //reset weight for completed topic
+                    topic.currentWeight = topic.priority;
+                    Topic.findByIdAndUpdate(topic._id, topic, {new: true}, (err, topic) => {
+                        if (err) {
+                            res.status(500)
+                            return next(err)
+                        } 
+                    })
+                } else {
+                    //increase weight for other topics
+                    topic.currentWeight += topic.priority
+                    Topic.findByIdAndUpdate(topic._id, topic, {new: true}, (err, topic) => {
+                        if (err) {
+                            res.status(500)
+                            return next(err)
+                        }
+                    })
+                }
+            })
+            res.status(200).send('Re-weighted topics!')
         })
     })
 
