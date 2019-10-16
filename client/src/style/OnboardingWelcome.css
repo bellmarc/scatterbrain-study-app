@@ -1,0 +1,12 @@
+.welcome-page {
+    background-image:
+    linear-gradient(
+      to right,
+      #6F9091, #F5EEEE
+    );
+    background-color: #F5EEEE;
+}
+
+.text-container {
+    text-align: center;
+}
