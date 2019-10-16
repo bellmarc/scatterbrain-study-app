@@ -18,7 +18,7 @@ const topicSchema = new Schema({
         required: true,
         default: 0
     },
-    user: {
+    userId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         required: true
