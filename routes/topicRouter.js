@@ -4,16 +4,26 @@ const Topic = require('../models/topic.js')
 const User = require('../models/user.js')
 
 //dev users to connect to topics
-const devUser = new User(
-    {name: 'dev user'}
-)
+const devUser = {
+    name: 'dev user 1',
+    userId: '5da68a4a6f2567456652a853'
+}
 
-const devUser2 = new User({
-    name: 'dev user 2'
+const devUser2 = {
+    name: 'dev user 2',
+    userId: '5da68f6f4705e648f372c06b'
+}
+
+//get all for dev
+topicRouter.get('/dev', (req, res, next) => {
+    Topic.find((err, topics) => {
+        if (err) {
+            res.status(500)
+            return next(err)
+        }
+        return res.status(200).send(topics)
+    })
 })
-
-console.log(devUser._id)
-console.log(devUser2._id)
 
 topicRouter.route('/')
     .get((req, res, next) => {
@@ -27,7 +37,6 @@ topicRouter.route('/')
     })
     .post((req, res, next) => {
         const newTopic = new Topic(req.body)
-        newTopic.userId = devUser._id
         newTopic.save((err, newTopic) => {
             if (err) {
                 res.status(500)
@@ -36,17 +45,6 @@ topicRouter.route('/')
             return res.status(201).send(newTopic)
         })
     })
-
-//get all for dev
-// topicRouter.get('/', (req, res, next) => {
-//     Topic.find((err, topics) => {
-//         if (err) {
-//             res.status(500)
-//             return next(err)
-//         }
-//         return res.status(200).send(topics)
-//     })
-// })
 
 topicRouter.route('/:_id')
     .get((req, res, next) => {
