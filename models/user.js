@@ -8,8 +8,8 @@ const userSchema = new Schema ({
     },
     interests: {
         type: String,
-        required: true
-    }
+        required: false
+    },
 })
 
 
