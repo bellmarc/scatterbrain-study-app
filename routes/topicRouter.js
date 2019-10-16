@@ -3,14 +3,21 @@ const topicRouter = express.Router();
 const Topic = require('../models/topic.js')
 const User = require('../models/user.js')
 
-//dev user to connect to topics
+//dev users to connect to topics
 const devUser = new User(
     {name: 'dev user'}
 )
 
+const devUser2 = new User({
+    name: 'dev user 2'
+})
+
+console.log(devUser._id)
+console.log(devUser2._id)
+
 topicRouter.route('/')
     .get((req, res, next) => {
-        Topic.find((err, topics) => {
+        Topic.find({userId: req.body.userId},(err, topics) => {
             if (err) {
                 res.status(500)
                 return next(err)
@@ -29,7 +36,18 @@ topicRouter.route('/')
             return res.status(201).send(newTopic)
         })
     })
-    
+
+//get all for dev
+// topicRouter.get('/', (req, res, next) => {
+//     Topic.find((err, topics) => {
+//         if (err) {
+//             res.status(500)
+//             return next(err)
+//         }
+//         return res.status(200).send(topics)
+//     })
+// })
+
 topicRouter.route('/:_id')
     .get((req, res, next) => {
         Topic.findById(req.params._id, (err, topic) => {
