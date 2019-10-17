@@ -29,7 +29,7 @@ function TopicPage(props){
             {/* <TopicInfo /> */}
             <button className="topic-smart-session" onClick= {() => handleSmartSession(currentUser.userId)}>Smart Session</button>
             <TopicList currentUser = {currentUser}/>
-            {sessionStartDialog.isStarting} && <StartSession topic= {sessionStartDialog.topic} />
+            {sessionStartDialog.isStarting && <StartSession topic= {sessionStartDialog.topic} />}
         </main>
     )
 }
