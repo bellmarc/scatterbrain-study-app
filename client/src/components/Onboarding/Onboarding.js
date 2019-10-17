@@ -1,13 +1,14 @@
 import React from 'react';
-import OnboardingWelcome from '../Onboarding/OnboardingWelcome.js';
+import Welcome from './Welcome.js';
+import HowItWorks from './HowItWorks.js';
 
 //hook here
 const Onboarding = (props) => {
   return (
       <div>
         {/* if else switching routes (displays each onboarding component) */}
-          <OnboardingWelcome />
-
+          <Welcome />
+          <HowItWorks />
       </div>
   )
 }
