@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useState }from 'react';
 import '../../style/TopicPage/TopicPage.css';
 import TopicList from './TopicList';
 import TopicInstructions from './TopicInstructions';
 import axios from 'axios';
-import { withRouter } from 'react-router-dom'
 import StartSession from './StartSession';
 
 //user for test, will be from context
