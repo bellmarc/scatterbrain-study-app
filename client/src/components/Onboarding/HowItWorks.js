@@ -1,7 +1,8 @@
 import React from "react";
 import "../../style/HowItWorks.css";
+import { Link } from 'react-router-dom';
 
-function HowItWorks() {
+function HowItWorks(props) {
   return (
     <div className="how-page">
       <div className="how-text-container">
@@ -14,7 +15,7 @@ function HowItWorks() {
         <p>
           Refers to the importance of a topic on your study list.
         </p>
-        <button className="how-btn">Get Started</button>
+        <Link to={"/onboard/how"} className="how-btn">Get Started</Link>
       </div>
     </div>
   );

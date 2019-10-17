@@ -1,7 +1,9 @@
 import React from "react";
 import "../../style/Welcome.css";
+import { withRouter } from 'react-router-dom';
 
-function Welcome() {
+function Welcome(props) {
+  console.log(props)
   return (
     <div className="welcome-page">
       <div className="text-container">
@@ -12,10 +14,11 @@ function Welcome() {
           Having a hard time deciding what to study? We utilize a space-learning repetition
           system that tailors to your study needs.
         </p>
-        <button className="welcome-btn">Get Started</button>
+
+        <button className="welcome-btn" onClick={()=> props.history.push("/onboard/how")}>Get Started</button>
       </div>
     </div>
   );
 }
 
-export default Welcome;
+export default withRouter(Welcome);
