@@ -14,12 +14,12 @@ const currentUser = {
 function TopicPage(props){
     const [ sessionStartDialog, setSessionStartDialog] = useState({topic: {}, isStarting: false})
     
-    const handleTopicSession = topic => {
-
+    const handleTopicSession = topicToStart => {
+        setSessionStartDialog({topic: topicToStart, isStarting: true})
     }
     const handleSmartSession = userId => {
         axios.get(`/topics/pick/${userId}`)
-            .then(res => sessionStartDialog({topic: res.data, isStarting: true}))
+            .then(res => setSessionStartDialog({topic: res.data, isStarting: true}))
             .catch(err => console.log(err))
     }
 
@@ -28,7 +28,7 @@ function TopicPage(props){
             <TopicInstructions />
             {/* <TopicInfo /> */}
             <button className="topic-smart-session" onClick= {() => handleSmartSession(currentUser.userId)}>Smart Session</button>
-            <TopicList currentUser = {currentUser}/>
+            <TopicList currentUser = {currentUser} handleTopicSession= {handleTopicSession}/>
             {sessionStartDialog.isStarting && <StartSession topic= {sessionStartDialog.topic} />}
         </main>
     )

@@ -3,7 +3,7 @@ import TopicCard from './TopicCard';
 import axios from 'axios';
 
 function TopicList(props){
-    const { currentUser } = props
+    const { currentUser, handleTopicSession } = props
 
     const [ topics, setTopics ] = useState([])
 
@@ -14,12 +14,11 @@ function TopicList(props){
     const getUserTopics = user => {
         axios.get(`/topics/${user.userId}`)
             .then(res => {
-                console.log(res.data)
                 setTopics(res.data)
             })
             .catch(err => console.error(err))
     }
-    const mappedTopics = topics.map(topic => <TopicCard topic = {topic} key = {topic._id} />);
+    const mappedTopics = topics.map(topic => <TopicCard topic = {topic} handleTopicSession = {handleTopicSession}key = {topic._id} />);
 
     return (
         <ul className="topic-list">Topics:
