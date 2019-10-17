@@ -1,0 +1,26 @@
+.add-priority-page {
+    background-image:
+    linear-gradient(
+      to top right,
+      #4BC0C8, #F5EEEE
+    );
+    background-color: #F5EEEE;
+}
+.add-priority-text {
+    align-content: center;
+    text-align: center;
+}
+
+.priority-input {
+    width: 30px;
+    height: 30px;
+}
+.priority-btn-container {
+    align-items: center;
+}
+
+.add-priority-btn {
+    background-color: whitesmoke;
+    border-radius: 4;
+
+}

@@ -1,4 +1,4 @@
-.welcome-page {
+.start-profile {
     background-image:
     linear-gradient(
       to top right,
@@ -7,11 +7,7 @@
     background-color: #F5EEEE;
 }
 
-.text-container {
+.start-profile-text-container {
     text-align: center;
-}
-
-.welcome-btn {
-  background-color: whitesmoke;
-  border-radius: 4;
+    border: 1px solid black;
 }

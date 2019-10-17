@@ -1,0 +1,19 @@
+.profile-complete-page {
+  background-image: linear-gradient(to top right, #4bc0c8, #f5eeee);
+  background-color: #f5eeee;
+}
+.profile-complete-text {
+  align-content: center;
+  text-align: center;
+}
+
+.profile-complete-input {
+  width: 200px;
+  height: 30px;
+}
+.profile-complete-btn-container {
+  align-items: center;
+}
+.skip-btn {
+    font-size:12px;
+}

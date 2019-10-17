@@ -1,6 +1,6 @@
 import React from "react";
 import "../../style/HowItWorks.css";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 function HowItWorks(props) {
   return (
@@ -12,10 +12,10 @@ function HowItWorks(props) {
           Defines what you will cover during your self-governed study session.
         </p>
         <h2>Priority</h2>
-        <p>
-          Refers to the importance of a topic on your study list.
-        </p>
-        <Link to={"/onboard/how"} className="how-btn">Get Started</Link>
+        <p>Refers to the importance of a topic on your study list.</p>
+        <Link to={"/onboard/enter-topic"} className="how-btn">
+          Next
+        </Link>
       </div>
     </div>
   );
