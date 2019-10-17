@@ -1,11 +1,11 @@
 import React from 'react';
-import OnboardingWelcome from './OnboardingWelcome.js';
+import OnboardingWelcome from '../Onboarding/OnboardingWelcome.js';
 
+//hook here
 const Onboarding = (props) => {
   return (
       <div>
         {/* if else switching routes (displays each onboarding component) */}
-        <p1>First Page</p1>
           <OnboardingWelcome />
 
       </div>
