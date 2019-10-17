@@ -3,36 +3,10 @@ const topicRouter = express.Router();
 const Topic = require('../models/topic.js')
 const User = require('../models/user.js')
 
-//dev users to connect to topics (these are dan's, you should make your own if you need to test)
-// [
-//     {
-//         "_id": "5da74084f1f54a4e0898b98f",
-//         "name": "George",
-//     },
-//     {
-//         "_id": "5da7408bf1f54a4e0898b990",
-//         "name": "Bobby",
-//     },
-//     {
-//         "_id": "5da74092f1f54a4e0898b991",
-//         "name": "Elizabeth",
-//     }
-// ]
-
-//get all for dev
-topicRouter.get('/dev', (req, res, next) => {
-    Topic.find((err, topics) => {
-        if (err) {
-            res.status(500)
-            return next(err)
-        }
-        return res.status(200).send(topics)
-    })
-})
-
+//get all or post
 topicRouter.route('/')
     .get((req, res, next) => {
-        Topic.find({userId: req.body.userId},(err, topics) => {
+        Topic.find((err, topics) => {
             if (err) {
                 res.status(500)
                 return next(err)
@@ -51,10 +25,22 @@ topicRouter.route('/')
         })
     })
 
-//pick weighted topic from user. Requires userId in req.body
-topicRouter.route('/pick')
+//get topics for user
+topicRouter.route('/:userId')
     .get((req, res, next) => {
-        Topic.find({userId: req.body.userId},(err, topics) => {
+        Topic.find({userId: req.params.userId},(err, topics) => {
+            if (err) {
+                res.status(500)
+                return next(err)
+            }
+            return res.status(200).send(topics)
+        })
+    })
+
+//pick weighted topic from user. Requires userId in req.body
+topicRouter.route('/pick/:userId')
+    .get((req, res, next) => {
+        Topic.find({userId: req.params.userId},(err, topics) => {
             if (err) {
                 res.status(500)
                 return next(err)
@@ -72,9 +58,9 @@ topicRouter.route('/pick')
 
 //re-weight user's topics after one is completed.
 //requires userId and topicId of topic that was completed in req.body
-topicRouter.route('/sessionComplete')
+topicRouter.route('/sessionComplete/:userId')
     .put((req, res, next) => {
-        Topic.find({userId: req.body.userId}, (err, topics) => {
+        Topic.find({userId: req.params.userId}, (err, topics) => {
             topics.forEach(topic => {
                 if (topic.id === req.body.topicId){
                     //reset weight for completed topic
@@ -100,9 +86,10 @@ topicRouter.route('/sessionComplete')
         })
     })
 
-topicRouter.route('/:_id')
+//get/delete/edit one topic for user
+topicRouter.route('/:userId/:topicId')
     .get((req, res, next) => {
-        Topic.findById(req.params._id, (err, topic) => {
+        Topic.findById(req.params.topicId, (err, topic) => {
             if (err) {
                 res.status(500)
                 return next(err)
@@ -111,7 +98,7 @@ topicRouter.route('/:_id')
         })
     })
     .delete((req, res, next) => {
-        Topic.findByIdAndRemove(req.params._id, (err, topic) => {
+        Topic.findByIdAndRemove(req.params.topicId, (err, topic) => {
             if (err) {
                 res.status(500)
                 return next(err)
@@ -120,7 +107,7 @@ topicRouter.route('/:_id')
         })
     })
     .put((req, res, next) => {
-        Topic.findByIdAndUpdate(req.params._id, req.body, {new: true}, (err, topic) => {
+        Topic.findByIdAndUpdate(req.params.topicId, req.body, {new: true}, (err, topic) => {
             if (err) {
                 res.status(500)
                 return next(err)
@@ -130,10 +117,10 @@ topicRouter.route('/:_id')
     })
 
 function weightedPick(topics){
-    const weightedArray = []
+    let weightedArray = []
     //add once chance for each unit of weight
     topics.forEach(topic => {
-        weightedArray.push(Array(topic.currentWeight).fill(topic._id))
+        weightedArray = [...weightedArray, ...Array(topic.currentWeight).fill(topic._id)]
     })
     //random
     return weightedArray[Math.floor(Math.random() * weightedArray.length)]
