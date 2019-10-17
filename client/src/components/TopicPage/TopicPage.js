@@ -16,9 +16,9 @@ function TopicPage(){
     return (
         <main className="topic-page">
             <TopicInstructions />
-            <TopicInfo />
+            {/* <TopicInfo /> */}
             <button className="topic-smart-session">Smart Session</button>
-            <TopicList user = {currentUser}/>
+            <TopicList currentUser = {currentUser}/>
         </main>
     )
 }
