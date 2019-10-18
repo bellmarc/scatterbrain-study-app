@@ -9,7 +9,6 @@ function Navbar() {
       setMenu(!menu)
     }
     
-    console.log(menu)
     return (
         <>
         {menu && <Menu close={toggleMenu} speed={200}/>}
