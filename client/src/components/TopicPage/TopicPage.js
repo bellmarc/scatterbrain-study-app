@@ -31,7 +31,6 @@ function TopicPage(props){
             })
             .catch(err => console.error(err))
     }
-
     const handleStart = topicIdtoStart => {
         //needs route
         props.history.push(`/session/${topicIdtoStart}`)
@@ -66,6 +65,7 @@ function TopicPage(props){
         <main className="topic-page">
             <TopicInstructions />
             <button className="topic-smart-session" onClick= {() => handleSmartSession(currentUser._id)}>Smart Session</button>
+            <button className="topic-new-topic">New Topic</button>
             <TopicList 
                 handleSelectTopic = {handleSelectTopic}
                 topics = {topics}
