@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from 'react';
-import '../style/menu.css'
-import { withRouter } from 'react-router-dom'  
+import '../style/menu.css';
+import { withRouter } from 'react-router-dom';
+import { clear as logout, get as isLoggedIn } from '../functions/User/Browser';
 
 const Menu = (props) => {
   const [className , setClassName] = useState('menu menu-off')
@@ -30,7 +31,9 @@ const Menu = (props) => {
       <button onClick = { ()=>push('/history') } >History</button>
       <button onClick = { ()=>push('/settings') } >Settings</button>
       <button onClick = { ()=>push('/help') } >Help</button>
-      <button onClick = { ()=>{push('/landing')} } >Log Out</button>
+      {isLoggedIn() && <button onClick = { ()=>{
+        logout()
+        push('/landing')} } >Log Out</button>}
     </div>
   )
   : (<div className="menu">Write a close function to "close" menu then pass it to Menu props as "close"</div>);
