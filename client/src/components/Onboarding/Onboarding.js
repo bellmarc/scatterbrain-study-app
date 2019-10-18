@@ -6,9 +6,12 @@ import EnterTopic from "./EnterTopic.js";
 import AddPriority from "./AddPriority.js";
 import ProfileComplete from "./ProfileComplete.js";
 import { Switch, Route } from "react-router-dom";
+import { get as getUser } from "../../functions/User/Browser"
 
 //hook here, save userName to context dummy array in meantime
-const Onboarding = () => {
+const Onboarding = (props) => {
+  const user = getUser()
+  if(user.name){props.history.push('/topics')}
   return (
     <div>
       {/* if else switching routes (displays each onboarding component) */}
