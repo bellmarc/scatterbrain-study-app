@@ -49,12 +49,22 @@
     font-weight: 900;
     color: red;
 }
-.start-cancel{
+.start-cancel {
     padding: 5px;
     border: 2px solid purple;
 }
-.start-confirm{
+.start-confirm {
     padding: 5px;
     border: 2px solid purple;
+}
+.topic-selected button, .topic-edit button {
+    padding: 5px;
+    border: 2px solid purple;
+}
+
+.topic-edit form {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
 }
 
