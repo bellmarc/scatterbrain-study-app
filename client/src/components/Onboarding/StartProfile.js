@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "../../style/Onboarding/StartProfile.css";
 import userServer from "../../functions/User/Server.js";
+import userBrowser from '../../functions/User/Browser.js';
+import axios from "axios";
 
 function StartProfile(props) {
 const [user, setUser] = useState("")
@@ -8,6 +10,12 @@ const [user, setUser] = useState("")
 const handleChange = (e) => {
   setUser(e.target.value)
 }
+
+// const newUserPost = ()=> { //must post user to DB
+//   axios.post("/users", {name: user})
+//   .then(res => console.log (res.data)) //function to save to LS
+//   .catch(err => console.log(err))
+// }
   return (
     <div className="start-profile">
       <div className="start-profile-text-container">
@@ -20,11 +28,11 @@ const handleChange = (e) => {
         <button
           className="start-profile"
           onClick={() =>  {
-            console.log(user)
-            userServer.add({ name: "user" })
-            .then(res => console.log(res.data))
-            /* .then(props.history.push("/onboard/enter-topic")) */
-            .catch(err => err)
+            userServer.add({ name: user })
+            .then(res => userBrowser.add(res))
+            .catch(err => console.log(err))
+            .then(props.history.push("/onboard/enter-topic"))
+             {/* newUserPost() */}
           }}
         >
           Get Started

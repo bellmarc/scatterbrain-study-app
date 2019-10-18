@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../style/Onboarding/EnterTopic.css";
-import { Link } from "react-router-dom";
+// import userBrowser from './functions/User/Browser.js';
+import Axios from "axios";
+
+
 
 function EnterTopic(props) {
+  const[topic, setTopic] = useState("")
+
+  const handleChange = (e) => {
+    setTopic(e.target.value)
+  }
+  const addNewTopic =() => {
+    Axios.post("/topics", )
+  }
+
   return (
     <div className="enter-topic-page">
       <div className="enter-topic-text">
@@ -13,9 +25,14 @@ function EnterTopic(props) {
         <div className="topic-input-container">
           <input type="text" name="name" placeholder="Type your topic"></input>
         </div>
-        <Link to={"/onboard/add-priority"} className="enter-topic-btn">
-          Next
-        </Link>
+        {/* <button
+        className="enter-topic-btn"
+        onClick={()=> {
+          userBrowser.add
+        }}>
+        .then(props.history.push("/onboard/add-priority"))
+          Next</button> */}
+
       </div>
     </div>
   );
