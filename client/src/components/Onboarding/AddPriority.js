@@ -1,8 +1,9 @@
 import React from "react";
 import "../../style/Onboarding/AddPriority.css";
-import { Link } from "react-router-dom";
+
 
 function AddPriority(props) {
+  console.log(props.match.params)
   return (
     <div className="add-priority-page">
       <div className="add-priority-text">
@@ -26,9 +27,15 @@ function AddPriority(props) {
             <b>+</b>
           </button>
         </div>
-        <Link to={"/onboard/profile-complete"} className="add-priority-btn">
-          Next
-        </Link>
+        <button className="add-priority-btn"
+        onClick={()=> {
+
+        }}>
+        Next
+        </button>
+         {/* {"/onboard/profile-complete"} >
+          Next */}
+
       </div>
     </div>
   );

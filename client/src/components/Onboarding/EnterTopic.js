@@ -1,18 +1,27 @@
 import React, { useState } from "react";
 import "../../style/Onboarding/EnterTopic.css";
-// import userBrowser from './functions/User/Browser.js';
-import Axios from "axios";
-
+import userBrowser from '../../functions/User/Browser.js';
+import axios from "axios";
 
 
 function EnterTopic(props) {
   const[topic, setTopic] = useState("")
+  const currentUser = userBrowser.get()
 
   const handleChange = (e) => {
     setTopic(e.target.value)
   }
-  const addNewTopic =() => {
-    Axios.post("/topics", )
+
+  const addNewTopic = () => { //post newTopic to DB
+    axios.post("/topics",
+    { topic: topic, userId: currentUser._id
+    }) //need to get userId {topic: topic, userId: currentUser._id }
+    .then(res => {
+    console.log(res.data) //userBrowser.add to save to LS
+    return res
+    })
+    .then(res => props.history.push(`/onboard/add-priority/${res.data._id}`))
+    .catch(err => console.log(err))
   }
 
   return (
@@ -22,17 +31,17 @@ function EnterTopic(props) {
         <h4>
           <em>Ex: ReactJS</em>
         </h4>
-        <div className="topic-input-container">
-          <input type="text" name="name" placeholder="Type your topic"></input>
-        </div>
-        {/* <button
+        <form className="topic-input-container">
+          <input type="text" name="name" placeholder="Type your topic" onChange={handleChange} value={topic}/>
+        </form>
+        <button
         className="enter-topic-btn"
         onClick={()=> {
-          userBrowser.add
-        }}>
-        .then(props.history.push("/onboard/add-priority"))
-          Next</button> */}
-
+        addNewTopic()
+        }}
+        >
+          Next
+        </button>
       </div>
     </div>
   );

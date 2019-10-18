@@ -3,7 +3,6 @@ import "../../style/Onboarding/Welcome.css";
 import { withRouter } from 'react-router-dom';
 
 function Welcome(props) {
-  console.log(props)
   return (
     <div className="welcome-page">
       <div className="text-container">

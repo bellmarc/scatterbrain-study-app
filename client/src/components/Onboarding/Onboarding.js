@@ -17,7 +17,7 @@ const Onboarding = () => {
         <Route exact path="/onboard/how" component={HowItWorks} />
         <Route exact path="/onboard/start-profile" component={StartProfile} />
         <Route exact path="/onboard/enter-topic" component={EnterTopic} />
-        <Route exact path="/onboard/add-priority" component={AddPriority} />
+        <Route path="/onboard/add-priority/:topicId" component={AddPriority} />
         <Route
           exact
           path="/onboard/profile-complete"

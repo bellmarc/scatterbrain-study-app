@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "../../style/Onboarding/StartProfile.css";
 import userServer from "../../functions/User/Server.js";
 import userBrowser from '../../functions/User/Browser.js';
-import axios from "axios";
 
 function StartProfile(props) {
 const [user, setUser] = useState("")
@@ -24,7 +23,6 @@ const handleChange = (e) => {
         <form>
            <input type="text" name="name" placeholder="Type your name" onChange={handleChange} value={user}/>
         </form>
-        {/* <Link to={"/onboard/start-profile"} className="start-profile-btn">Next</Link> */}
         <button
           className="start-profile"
           onClick={() =>  {
