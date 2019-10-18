@@ -1,12 +1,21 @@
 .menu {
     position: absolute;
     top: 0;
+    left: 0;
     width: 80vw;
     height: 80vh;
     margin: 10vh 10vw;
     background-color: lightcyan;
     border: 1px solid salmon;
+    /* transition: all 200ms ease-out; */
 }
+.menu-on {
+    left: 0;
+}
+.menu-off {
+    left: 100vw;
+}
+
 
 .menu > button {
     border: none;
