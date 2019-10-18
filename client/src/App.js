@@ -3,7 +3,6 @@ import './style/App.css';
 import { Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Onboarding from './components/Onboarding/Onboarding.js';
-import TopicsList from './components/TopicsList';
 import InSession from './components/InSession';
 import Settings from './components/Settings';
 import Help from './components/Help';
