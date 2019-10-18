@@ -1,5 +1,5 @@
 import React from "react";
-import "../../style/AddPriority.css";
+import "../../style/Onboarding/AddPriority.css";
 import { Link } from "react-router-dom";
 
 function AddPriority(props) {

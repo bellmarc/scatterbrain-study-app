@@ -1,5 +1,5 @@
 import React from "react";
-import "../../style/Welcome.css";
+import "../../style/Onboarding/Welcome.css";
 import { withRouter } from 'react-router-dom';
 
 function Welcome(props) {

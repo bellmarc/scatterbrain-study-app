@@ -1,5 +1,5 @@
 import React from "react";
-import "../../style/ProfileComplete.css";
+import "../../style/Onboarding/ProfileComplete.css";
 import { Link } from "react-router-dom";
 
 function ProfileComplete(props) {

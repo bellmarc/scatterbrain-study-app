@@ -1,5 +1,5 @@
 import React from "react";
-import "../../style/EnterTopic.css";
+import "../../style/Onboarding/EnterTopic.css";
 import { Link } from "react-router-dom";
 
 function EnterTopic(props) {

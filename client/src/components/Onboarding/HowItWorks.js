@@ -1,5 +1,5 @@
 import React from "react";
-import "../../style/HowItWorks.css";
+import "../../style/Onboarding/HowItWorks.css";
 import { Link } from "react-router-dom";
 
 function HowItWorks(props) {
@@ -13,7 +13,7 @@ function HowItWorks(props) {
         </p>
         <h2>Priority</h2>
         <p>Refers to the importance of a topic on your study list.</p>
-        <Link to={"/onboard/enter-topic"} className="how-btn">
+        <Link to={"/onboard/start-profile"} className="how-btn">
           Next
         </Link>
       </div>

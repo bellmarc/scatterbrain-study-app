@@ -13,8 +13,8 @@ const Onboarding = () => {
     <div>
       {/* if else switching routes (displays each onboarding component) */}
       <Switch>
-        <Route exact path="/onboard/how" component={HowItWorks} />
         <Route exact path="/onboard" component={Welcome} />
+        <Route exact path="/onboard/how" component={HowItWorks} />
         <Route exact path="/onboard/start-profile" component={StartProfile} />
         <Route exact path="/onboard/enter-topic" component={EnterTopic} />
         <Route exact path="/onboard/add-priority" component={AddPriority} />
