@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "../../style/Onboarding/AddPriority.css";
+import "../../style/Onboarding/AdditionalPriority.css";
 import userBrowser from '../../functions/User/Browser.js';
 import axios from "axios";
 
-function AddPriority(props) {
+function AdditionalPriority(props) {
   const[priority, setPriority] = useState("")
   const topicId = props.match.params.topicId
   const currentUser = userBrowser.get()
@@ -59,4 +59,4 @@ function AddPriority(props) {
   );
 }
 
-export default AddPriority;
+export default AdditionalPriority;
