@@ -1,12 +1,17 @@
 import React from 'react';
+import axios from 'axios';
 
 function TopicSelected(props){
-    const { topic, topic: {topic: topicName}, handleStart, handleGoBack} = props
+    const { topic, deleteTopic, setSessionConfirm, setTopicSelect, handleGoBack} = props
+    
     return (
         <dialog className="topic-selected">
-            {topicName}
-            <button onClick={handleStart}>Start</button>
-            <button>Delete</button>
+            {topic.topic}
+            <button onClick={() => {
+                setTopicSelect({topic: {}, isSelected: false})
+                setSessionConfirm({topic: topic, isStarting: true});
+                }}>Start</button>
+            <button onClick = {() => deleteTopic(topic._id)}>Delete</button>
             <button>Edit</button>
             <button onClick={handleGoBack}>Back</button>
         </dialog>

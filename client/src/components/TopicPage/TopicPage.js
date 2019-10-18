@@ -1,4 +1,4 @@
-import React, { useState, useEffect }from 'react';
+import React, { useState }from 'react';
 import '../../style/TopicPage/TopicPage.css';
 import TopicList from './TopicList.js';
 import TopicInstructions from './TopicInstructions.js';
@@ -7,17 +7,18 @@ import StartSession from './StartSession.js';
 import TopicSelected from './TopicSelected.js';
 import userBrowser from '../../functions/User/Browser.js';
 
-//user for test, will be from context
-// const currentUser = {
-//     name: 'Bobby',
-//     userId: '5da7408bf1f54a4e0898b990'
+//dev user
+// {
+//     "_id": "5da91ba590e48b01c57fa30c",
+//     "name": "Dan"
 // }
 
 function TopicPage(props){
     const [ sessionConfirm, setSessionConfirm ] = useState({topic: {}, isStarting: false});
     const [ topicSelect, setTopicSelect ] = useState({topic: {}, isSelected: false});
-    const currentUser = userBrowser.get()
-
+    const [ topics, setTopics ] = useState([])
+    
+    const currentUser = userBrowser.get();
 
     const handleStart = topicIdtoStart => {
         //needs route
@@ -25,7 +26,7 @@ function TopicPage(props){
     }
     const handleGoBack = () => {
         setSessionConfirm({topic: {}, isStarting: false});
-        setTopicSelect({topic: {}, isStarting: false});
+        setTopicSelect({topic: {}, isSelected: false});
     }
     
     const handleSmartSession = userId => {
@@ -36,12 +37,28 @@ function TopicPage(props){
     const handleSelectTopic = selectedTopic => {
         setTopicSelect({topic: selectedTopic, isSelected: true})
     }
+    const deleteTopic = topicId => {
+        axios.delete(`/topics/${currentUser._id}/${topicId}`)
+            .then(res => {
+                const indexToDelete = topics.findIndex(topic => topic._id === res.data._id)
+                const newTopics = [...topics]
+                newTopics.splice(indexToDelete, 1)
+                setTopics(newTopics)
+                setTopicSelect({topic:{}, isSelected: false})
+            })
+            .catch(err => console.error(err))
+    }
 
     return (
         <main className="topic-page">
             <TopicInstructions />
-            <button className="topic-smart-session" onClick= {() => handleSmartSession(currentUser.userId)}>Smart Session</button>
-            <TopicList currentUser = {currentUser} handleSelectTopic= {handleSelectTopic}/>
+            <button className="topic-smart-session" onClick= {() => handleSmartSession(currentUser._id)}>Smart Session</button>
+            <TopicList 
+                currentUser = {currentUser} 
+                handleSelectTopic = {handleSelectTopic}
+                topics = {topics}
+                setTopics = {setTopics}
+            />
             {sessionConfirm.isStarting && 
                 <StartSession 
                     topic= {sessionConfirm.topic} 
@@ -49,10 +66,17 @@ function TopicPage(props){
                     handleGoBack = {handleGoBack}/>}
             {topicSelect.isSelected && 
                 <TopicSelected
-                    topic= {topicSelect.topic} 
+                    topic = {topicSelect.topic} 
                     setSessionConfirm = {setSessionConfirm}
-                    handleGoBack = {handleGoBack}/>}
-                    {/* <button onClick= {() => userBrowser.add(currentUser)}>Magic Button</button> */}
+                    setTopicSelect = {setTopicSelect}
+                    handleGoBack = {handleGoBack}
+                    deleteTopic = {deleteTopic}
+                />
+            }
+                    {/* <button onClick= {() => {
+                        userBrowser.add({name: "Dan", _id: "5da91ba590e48b01c57fa30c"})
+                        console.log('magic button pressed')
+                    }}>Magic Dev Button</button> */}
         </main>
     )
 }

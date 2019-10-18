@@ -1,18 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import TopicCard from './TopicCard';
 import axios from 'axios';
 
 function TopicList(props){
-    const { currentUser, handleSelectTopic } = props
-
-    const [ topics, setTopics ] = useState([])
+    const { currentUser, topics, setTopics, handleSelectTopic } = props
 
     useEffect(() => {
         getUserTopics(currentUser);
-    },[currentUser])
+    },[])
     
     const getUserTopics = user => {
-        axios.get(`/topics/${user.userId}`)
+        axios.get(`/topics/${user._id}`)
             .then(res => {
                 setTopics(res.data)
             })
