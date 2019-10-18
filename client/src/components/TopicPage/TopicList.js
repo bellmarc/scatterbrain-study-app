@@ -3,7 +3,7 @@ import TopicCard from './TopicCard';
 import axios from 'axios';
 
 function TopicList(props){
-    const { currentUser, handleTopicSession } = props
+    const { currentUser, handleSelectTopic } = props
 
     const [ topics, setTopics ] = useState([])
 
@@ -18,10 +18,10 @@ function TopicList(props){
             })
             .catch(err => console.error(err))
     }
-    const mappedTopics = topics.map(topic => <TopicCard topic = {topic} handleTopicSession = {handleTopicSession}key = {topic._id} />);
+    const mappedTopics = topics.map(topic => <TopicCard topic = {topic} handleSelectTopic = {handleSelectTopic} key = {topic._id} />);
 
     return (
-        <ul className="topic-list">Topics:
+        <ul className="topic-list">Topics
             {mappedTopics}
         </ul>
     )

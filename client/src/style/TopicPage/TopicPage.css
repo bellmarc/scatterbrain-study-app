@@ -1,0 +1,60 @@
+.topic-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    padding: 10px;
+}
+.topic-instructions {
+    border: 2px solid red;
+    
+}
+.topic-smart-session {
+    height: 50px;
+    width: 100px;
+    border: 2px solid red;
+    margin: 10px 0;
+}
+/* topics list and cards */
+.topic-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid red;
+    width: 100%;
+    list-style: none;
+    padding: 5px;
+}
+.topic-card {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    border: 2px solid blue;
+    padding: 2px;
+    margin-top: 2px;
+}
+
+/* dialog */
+.topic-page dialog{
+    height: 80vh;
+    width: 90vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.start-topic-name {
+    font-weight: 900;
+    color: red;
+}
+.start-cancel{
+    padding: 5px;
+    border: 2px solid purple;
+}
+.start-confirm{
+    padding: 5px;
+    border: 2px solid purple;
+}
+

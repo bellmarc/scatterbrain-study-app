@@ -1,16 +1,16 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom'
 
 function StartSession(props){
-    const handleStart = topic => {
-        props.history.push('/session')
-    }
+    const { handleStart, handleGoBack,  topic: { topic: topicName, _id: topicId } } = props;
+
     return(
         <dialog className="start-session-dialog" open = {true}>
-            <h3>Do you want to start a study session on {props.topic.topic}?</h3>
-            <button onClick= {() => handleStart()}>Start Session!</button>
+            <h3>Ready to start this session?</h3>
+            <h3 className="start-topic-name">{topicName}</h3>
+            <button className="start-confirm"onClick= {() => handleStart(topicId)}>Start Session!</button>
+            <button className="start-cancel" onClick= {handleGoBack}>Cancel</button>
         </dialog>
     )
 }
 
-export default withRouter(StartSession)
+export default StartSession
