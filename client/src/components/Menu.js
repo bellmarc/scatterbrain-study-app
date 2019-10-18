@@ -1,18 +1,32 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 import '../style/menu.css'
 import { withRouter } from 'react-router-dom'  
 
 const Menu = (props) => {
-  
+  const [className , setClassName] = useState('menu menu-off')
+
   const push = (path) => {
-    props.history.push(path)
-    props.close()
+    setClassName ('menu menu-off');
+    setTimeout(() => {
+      props.history.push(path)
+      props.close()      
+    }
+    ,props.speed)
   }
-  
+
+  useEffect(() => {
+    setClassName( 'menu menu-on' )
+  },[]
+  )
+
   return props.close ? (
-      <div className="menu">
+    
+    <div className={className} style={{transition: `all ${props.speed}ms ease-out`}}>
         Menu
-        <button onClick = { props.close }>Close</button>
+        <button onClick = { ()=>{
+            setClassName ('menu menu-off')
+            setTimeout(()=>props.close(),props.speed)
+          } }>Close</button>
         <button onClick = { ()=>push('/topics') } >Topics</button>
         <button onClick = { ()=>push('/history') } >History</button>
         <button onClick = { ()=>push('/settings') } >Settings</button>
