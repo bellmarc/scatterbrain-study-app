@@ -1,4 +1,4 @@
-import React, { useState }from 'react';
+import React, { useState, useEffect }from 'react';
 import '../../style/TopicPage/TopicPage.css';
 import TopicList from './TopicList.js';
 import TopicInstructions from './TopicInstructions.js';
@@ -20,6 +20,18 @@ function TopicPage(props){
     
     const currentUser = userBrowser.get();
 
+    useEffect(() => {
+        getUserTopics(currentUser);
+    },[])
+    
+    const getUserTopics = user => {
+        axios.get(`/topics/${user._id}`)
+            .then(res => {
+                setTopics(res.data)
+            })
+            .catch(err => console.error(err))
+    }
+
     const handleStart = topicIdtoStart => {
         //needs route
         props.history.push(`/session/${topicIdtoStart}`)
@@ -40,10 +52,11 @@ function TopicPage(props){
     const deleteTopic = topicId => {
         axios.delete(`/topics/${currentUser._id}/${topicId}`)
             .then(res => {
-                const indexToDelete = topics.findIndex(topic => topic._id === res.data._id)
-                const newTopics = [...topics]
-                newTopics.splice(indexToDelete, 1)
-                setTopics(newTopics)
+                setTopics(prevTopics => {
+                    const indexToDelete = prevTopics.findIndex(topic => topic._id === res.data._id)
+                    prevTopics.splice(indexToDelete, 1)
+                    return prevTopics
+                })
                 setTopicSelect({topic:{}, isSelected: false})
             })
             .catch(err => console.error(err))
@@ -54,10 +67,8 @@ function TopicPage(props){
             <TopicInstructions />
             <button className="topic-smart-session" onClick= {() => handleSmartSession(currentUser._id)}>Smart Session</button>
             <TopicList 
-                currentUser = {currentUser} 
                 handleSelectTopic = {handleSelectTopic}
                 topics = {topics}
-                setTopics = {setTopics}
             />
             {sessionConfirm.isStarting && 
                 <StartSession 
