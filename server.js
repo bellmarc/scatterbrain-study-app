@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
@@ -8,14 +9,12 @@ const MONGO_PASS = process.env.MONGO_PASS
 const MONGO_HOST = process.env.MONGO_HOST
 const MONGO_DB = process.env.MONGO_DB
 
-
-
 app.use(express.json());
 app.use(morgan('dev'));
 
 //DB
-// mongoose.connect(`mongodb+srv://${MONGO_USER}:${MONGO_PASS}@${MONGO_HOST}/${MONGO_DB}?retryWrites=true&w=majority`,
-mongoose.connect('mongodb://localhost:27017/scatterbraindb',
+mongoose.connect(`mongodb+srv://${MONGO_USER}:${MONGO_PASS}@${MONGO_HOST}/${MONGO_DB}?retryWrites=true&w=majority`,
+// mongoose.connect('mongodb://localhost:27017/scatterbraindb',
 {
     useNewUrlParser: true,
     useFindAndModify: true,
