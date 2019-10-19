@@ -9,7 +9,7 @@ export const get = (id) => {
     return axios.get(`/users/${id}`).then(sendResponse).catch(handleError)
 }
 
-export default { get, add }    
+export default { get, add }
 
-    
+
 

@@ -1,0 +1,14 @@
+.enter-topic-page {
+  background-image: linear-gradient(to top right, #4bc0c8, #f5eeee);
+  background-color: #f5eeee;
+}
+
+.enter-topic-text {
+  border: 1px solid black;
+  text-align: center;
+}
+
+.enter-topic-btn {
+  background-color: whitesmoke;
+  border-radius: 4;
+}

@@ -1,0 +1,17 @@
+.welcome-page {
+    background-image:
+    linear-gradient(
+      to top right,
+      #4BC0C8, #F5EEEE
+    );
+    background-color: #F5EEEE;
+}
+
+.text-container {
+    text-align: center;
+}
+
+.welcome-btn {
+  background-color: whitesmoke;
+  border-radius: 4;
+}

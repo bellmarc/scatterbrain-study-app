@@ -1,0 +1,14 @@
+.how-text-container {
+  border: 1px solid black;
+  text-align: center;
+}
+
+.how-page {
+  background-image: linear-gradient(to top right, #4bc0c8, #f5eeee);
+  background-color: #f5eeee;
+}
+
+.how-btn {
+  background-color: whitesmoke;
+  border-radius: 4;
+}

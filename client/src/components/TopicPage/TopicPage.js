@@ -17,13 +17,13 @@ function TopicPage(props){
     const [ sessionConfirm, setSessionConfirm ] = useState({topic: {}, isStarting: false});
     const [ topicSelect, setTopicSelect ] = useState({topic: {}, isSelected: false});
     const [ topics, setTopics ] = useState([])
-    
+
     const currentUser = userBrowser.get();
 
     useEffect(() => {
         getUserTopics(currentUser);
     },[])
-    
+
     const getUserTopics = user => {
         axios.get(`/topics/${user._id}`)
             .then(res => {
@@ -39,7 +39,7 @@ function TopicPage(props){
         setSessionConfirm({topic: {}, isStarting: false});
         setTopicSelect({topic: {}, isSelected: false});
     }
-    
+
     const handleSmartSession = userId => {
         axios.get(`/topics/pick/${userId}`)
             .then(res => setSessionConfirm({topic: res.data, isStarting: true}))
@@ -65,19 +65,19 @@ function TopicPage(props){
         <main className="topic-page">
             <TopicInstructions />
             <button className="topic-smart-session" onClick= {() => handleSmartSession(currentUser._id)}>Smart Session</button>
-            {/* <button className="topic-new-topic">New Topic (will forward to onboarding/enter-topic</button> */}
-            <TopicList 
+            <button className="topic-new-topic" onClick={()=> props.history.push("/onboard/enterTopic")}>New Topic</button>
+            <TopicList
                 handleSelectTopic = {handleSelectTopic}
                 topics = {topics}
             />
-            {sessionConfirm.isStarting && 
-                <StartSession 
-                    topic= {sessionConfirm.topic} 
+            {sessionConfirm.isStarting &&
+                <StartSession
+                    topic= {sessionConfirm.topic}
                     handleStart = {handleStart}
                     handleGoBack = {handleGoBack}/>}
-            {topicSelect.isSelected && 
+            {topicSelect.isSelected &&
                 <TopicSelected
-                    topic = {topicSelect.topic} 
+                    topic = {topicSelect.topic}
                     setSessionConfirm = {setSessionConfirm}
                     setTopicSelect = {setTopicSelect}
                     handleGoBack = {handleGoBack}

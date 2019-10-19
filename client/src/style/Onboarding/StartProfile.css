@@ -1,0 +1,13 @@
+.start-profile {
+    background-image:
+    linear-gradient(
+      to top right,
+      #4BC0C8, #F5EEEE
+    );
+    background-color: #F5EEEE;
+}
+
+.start-profile-text-container {
+    text-align: center;
+    border: 1px solid black;
+}
