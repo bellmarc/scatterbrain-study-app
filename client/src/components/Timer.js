@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 const Digits = (props) => props.val < 10 ? (<span>0{props.val}</span>) : (<span>{props.val}</span>)
 
+
 const Timer = (props) => {
-    console.log(props);
     const [hours, setHours] = useState(0)
     const [minutes, setMinutes] = useState(0)
     const [seconds, setSeconds] = useState(0)
     const [pause, setPause] = useState(false)
-
     
     props.save && props.save({hours,minutes,seconds})
 
@@ -33,7 +32,7 @@ const Timer = (props) => {
       }, [seconds, minutes, hours, pause])
 
     return (
-        <div style={{background: pause ? 'red' : 'lightgreen'}}>
+        <div style={{background: pause ? 'red' : 'lightgreen',fontSize:50}}>
             <Digits val={hours}/>:
             <Digits val={minutes}/>:
             <Digits val={seconds}/>
