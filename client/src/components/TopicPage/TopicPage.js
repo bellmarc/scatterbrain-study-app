@@ -65,7 +65,7 @@ function TopicPage(props){
         <main className="topic-page">
             <TopicInstructions />
             <button className="topic-smart-session" onClick= {() => handleSmartSession(currentUser._id)}>Smart Session</button>
-            <button className="topic-new-topic">New Topic</button>
+            {/* <button className="topic-new-topic">New Topic (will forward to onboarding/enter-topic</button> */}
             <TopicList
                 handleSelectTopic = {handleSelectTopic}
                 topics = {topics}
@@ -82,6 +82,8 @@ function TopicPage(props){
                     setTopicSelect = {setTopicSelect}
                     handleGoBack = {handleGoBack}
                     deleteTopic = {deleteTopic}
+                    currentUser = {currentUser}
+                    setTopics = {setTopics}
                 />
             }
                     {/* <button onClick= {() => {
