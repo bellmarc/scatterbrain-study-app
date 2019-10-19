@@ -9,32 +9,25 @@ const [user, setUser] = useState("")
 const handleChange = (e) => {
   setUser(e.target.value)
 }
-
-// const newUserPost = ()=> { //must post user to DB
-//   axios.post("/users", {name: user})
-//   .then(res => console.log (res.data)) //function to save to LS
-//   .catch(err => console.log(err))
-// }
   return (
     <div className="start-profile">
       <div className="start-profile-text-container">
         <h1>Start Your Profile</h1>
         <h2>What's Your Name?</h2>
-        <form>
-           <input type="text" name="name" placeholder="Type your name" onChange={handleChange} value={user}/>
-        </form>
-        <button
-          className="start-profile"
-          onClick={() =>  {
+        <form onSubmit={(e) =>  {
+          e.preventDefault()
             userServer.add({ name: user })
             .then(res => userBrowser.add(res))
             .catch(err => console.log(err))
-            .then(props.history.push("/onboard/enter-topic"))
-             {/* newUserPost() */}
-          }}
+            .then(props.history.push("/onboard/enterTopic"))
+          }}>
+           <input type="text" name="name" placeholder="Type your name" onChange={handleChange} value={user}/>
+           <button
+          className="start-profile"
         >
           Get Started
         </button>
+        </form>
       </div>
     </div>
   );

@@ -20,7 +20,7 @@ function EnterTopic(props) {
     console.log(res.data) //userBrowser.add to save to LS
     return res
     })
-    .then(res => props.history.push(`/onboard/add-priority/${res.data._id}`))
+    .then(res => props.history.push(`/onboard/addPriority/${res.data._id}`))
     .catch(err => console.log(err))
   }
 
@@ -31,17 +31,17 @@ function EnterTopic(props) {
         <h4>
           <em>Ex: ReactJS</em>
         </h4>
-        <form className="topic-input-container">
+        <form onSubmit={(e)=> {
+          e.preventDefault()
+          addNewTopic()
+         }} className="topic-input-container">
           <input type="text" name="name" placeholder="Type your topic" onChange={handleChange} value={topic}/>
-        </form>
         <button
         className="enter-topic-btn"
-        onClick={()=> {
-        addNewTopic()
-        }}
         >
           Next
         </button>
+        </form>
       </div>
     </div>
   );

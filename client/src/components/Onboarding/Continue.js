@@ -4,16 +4,16 @@ import "../../style/Onboarding/Continue.css";
 
 function Continue(props) {
     const sendToEnterTopicPage = () => {
-     props.history.push("/onboard/enter-topic")
+     props.history.push("/onboard/enterTopic")
     }
     const sendToSessionPage = () => {
-        props.history.push("/onboard/profile-complete")
+        props.history.push("/onboard/profileComplete")
     }
 
     return (
         <div className="redirect-page">
         <div className="continue-text">
-        <h1>Would You like to Continue Adding priorities to your Topic(s)?</h1>
+        <h1>Would You like to Continue Adding Topic(s)?</h1>
             <button className="yes-btn" onClick={ sendToEnterTopicPage }>
             Yes
             </button>

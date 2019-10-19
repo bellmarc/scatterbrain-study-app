@@ -65,7 +65,7 @@ function TopicPage(props){
         <main className="topic-page">
             <TopicInstructions />
             <button className="topic-smart-session" onClick= {() => handleSmartSession(currentUser._id)}>Smart Session</button>
-            {/* <button className="topic-new-topic">New Topic (will forward to onboarding/enter-topic</button> */}
+            <button className="topic-new-topic" onClick={()=> props.history.push("/onboard/enterTopic")}>New Topic</button>
             <TopicList
                 handleSelectTopic = {handleSelectTopic}
                 topics = {topics}

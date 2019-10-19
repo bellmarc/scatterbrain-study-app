@@ -16,16 +16,15 @@ const Onboarding = () => {
       <Switch>
         <Route exact path="/onboard" component={ Welcome } />
         <Route exact path="/onboard/how" component={ HowItWorks } />
-        <Route exact path="/onboard/start-profile" component={ StartProfile } />
-        <Route exact path="/onboard/enter-topic" component={ EnterTopic } />
-        <Route path="/onboard/add-priority/:topicId" component={ AddPriority } />
+        <Route exact path="/onboard/startProfile" component={ StartProfile } />
+        <Route exact path="/onboard/enterTopic" component={ EnterTopic } />
+        <Route path="/onboard/addPriority/:topicId" component={ AddPriority } />
         <Route path="/onboard/redirect" component={ Continue } />
         <Route
           exact
-          path="/onboard/profile-complete"
+          path="/onboard/profileComplete"
           component={ ProfileComplete }
         />
-        <Route exact path="/onboard/main" component={ ProfileComplete } />
       </Switch>
     </div>
   );

@@ -13,7 +13,7 @@ function HowItWorks(props) {
         </p>
         <h2>Priority</h2>
         <p>Refers to the importance of a topic on your study list.</p>
-        <Link to={"/onboard/start-profile"} className="how-btn">
+        <Link to={"/onboard/startProfile"} className="how-btn">
           Next
         </Link>
       </div>
