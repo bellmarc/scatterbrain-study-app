@@ -16,6 +16,13 @@
     left: 100vw;
 }
 
+<<<<<<< HEAD
+body{
+    overflow: hidden;
+}
+
+=======
+>>>>>>> master
 
 .menu > button {
     border: none;
