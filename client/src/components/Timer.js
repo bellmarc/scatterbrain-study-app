@@ -1,21 +1,17 @@
 import React, { useState, useEffect } from 'react';
+const Digits = (props) => props.val < 10 ? (<span>0{props.val}</span>) : (<span>{props.val}</span>)
 
-const Digits = (props) => {
-  return props.val < 10 ? (
-      <span>0{props.val}</span>
-  )
-  : (
-    <span>{props.val}</span>
-  )
-}
 
-const Timer = () => {
+const Timer = (props) => {
     const [hours, setHours] = useState(0)
     const [minutes, setMinutes] = useState(0)
     const [seconds, setSeconds] = useState(0)
+    const [pause, setPause] = useState(false)
+    
+    props.save && props.save({hours,minutes,seconds})
 
-    useEffect(() => {
-        const interval = setInterval(() => {
+    const incrementTime = () => {
+        if(pause===false){
             if (seconds >= 59) {
                 setSeconds(0)
                 setMinutes(minutes+1)
@@ -26,16 +22,24 @@ const Timer = () => {
             }
             else {
                 setSeconds(seconds+1)
-            }
-        }, 1000);
+            }            
+        }
+    }
+     
+    useEffect(() => {
+        const interval = setInterval(incrementTime, 1000);
         return () => clearInterval(interval);
-      }, [seconds, minutes, hours])
+      }, [seconds, minutes, hours, pause])
 
     return (
-        <div>
+        <div style={{background: pause ? 'red' : 'lightgreen',fontSize:50}}>
             <Digits val={hours}/>:
             <Digits val={minutes}/>:
             <Digits val={seconds}/>
+            <div>
+                <button onClick={()=>{setPause(!pause)}}>Pause</button>
+                <span>{pause ? "Timer paused" : ""}</span>
+            </div>
         </div>
     )
   }

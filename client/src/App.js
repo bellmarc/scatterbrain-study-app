@@ -15,7 +15,7 @@ function App() {
             <Navbar />
             <Switch>
                 <Route path="/topics" component={ TopicsPage }/>                
-                <Route path="/session" component={ InSession }/>
+                <Route path="/session/:id" component={ InSession }/>
                 <Route path="/settings" component={ Settings }/>
                 <Route path="/help" component={ Help }/>
                 <Route path="/onboard" component={ Onboarding }/>
