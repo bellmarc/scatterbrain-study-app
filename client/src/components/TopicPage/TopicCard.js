@@ -5,7 +5,6 @@ function TopicCard(props){
     return (
         <li className="topic-card" onClick= {() => handleSelectTopic(topic)}>
             <span>{topicName}</span>
-            <button>Edit</button>
         </li>
     )
 }
