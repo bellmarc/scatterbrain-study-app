@@ -16,6 +16,9 @@
     left: 100vw;
 }
 
+body{
+    overflow: hidden;
+}
 
 .menu > button {
     border: none;
