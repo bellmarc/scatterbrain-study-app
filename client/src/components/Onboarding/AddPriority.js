@@ -11,15 +11,16 @@ function AddPriority(props) {
   const handleChange = (e) => {
     setPriority(e.target.value)
   }
-  const updateTopicWithPriority = () => {
+  const updateTopicWithPriority = (e) => {
+    e.preventDefault()
     axios.put(`/topics/${currentUser._id}/${topicId}`,
-    { priority: Number(priority) })
-     .then(res => {
-       console.log(res)
-     })
+    { priority: Number(priority),  currentWeight: Number(priority) })
+    .then(res => {
+      console.log(res)
+      props.history.push("/onboard/redirect")// redirect
+    })
      .catch(err => console.log(err))
   }
-
 
   console.log(props.match.params) //id
   return (
@@ -47,10 +48,9 @@ function AddPriority(props) {
             <b>+</b>
           </button>
             <button className="add-priority-btn"
-        onClick={()=> {
-        updateTopicWithPriority()
-        .then(props.history.push("/onboard/profile-complete"))
-        }}>
+        onClick={
+        updateTopicWithPriority
+        }>
         Add
         </button>
         </form>

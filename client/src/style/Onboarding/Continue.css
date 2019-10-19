@@ -1,0 +1,19 @@
+.redirect-page {
+  background-image: linear-gradient(to top right, #4bc0c8, #f5eeee);
+  background-color: #f5eeee;
+}
+.continue-text {
+  align-content: center;
+  text-align: center;
+}
+
+.yes-btn {
+  align-items: center;
+  background-color: palegreen;
+  border-radius: 4px;
+}
+.no-btn {
+  align-items: center;
+  background-color: indianred;
+  border-radius: 4px;
+}
