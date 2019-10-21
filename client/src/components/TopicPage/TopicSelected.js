@@ -38,43 +38,47 @@ function TopicSelected(props){
         <>
             {   
                 editingTopic ? (
-                    <dialog className="topic-edit">
-                        <form onSubmit = {handleSubmit}>
-                            <input 
-                                type = "text" 
-                                name = "topic"
-                                required
-                                value = {formState.topic}
-                                onChange = {handleChange}
-                            />
-                            <input 
-                                type = "number"
-                                min = "0"
-                                max = "5"
-                                step = "1"
-                                name = "priority"
-                                value = {formState.priority}
-                                onChange = {handleChange}
-                            />
-                            <button type="submit">Save Changes</button>
-                        </form>
-                        <button onClick = {() => setEditingTopic(false)}>Cancel</button>
+                    <dialog className="topic-edit-background">
+                        <div className="topic-edit-container">
+                            <form onSubmit = {handleSubmit}>
+                                <input 
+                                    type = "text" 
+                                    name = "topic"
+                                    required
+                                    value = {formState.topic}
+                                    onChange = {handleChange}
+                                />
+                                <input 
+                                    type = "number"
+                                    min = "0"
+                                    max = "5"
+                                    step = "1"
+                                    name = "priority"
+                                    value = {formState.priority}
+                                    onChange = {handleChange}
+                                />
+                                <button type="submit">Save Changes</button>
+                            </form>
+                            <button onClick = {() => setEditingTopic(false)}>Cancel</button>
+                        </div>
                     </dialog>
                 ):(
-                    <dialog className="topic-selected">
-                        <div className="topic-selected-header">
-                            <span>Topic: {topic.topic} </span>
-                            <span>Priority: {topic.priority} </span>
+                    <dialog className="topic-selected-background">
+                        <div className="topic-selected-container">
+                            <h1>{topic.topic} </h1>
+                            <h3>Priority: {topic.priority} </h3>
+                            <button className="topic-selected-start"
+                                onClick={() => {
+                                    setTopicSelect({topic: {}, isSelected: false})
+                                    setSessionConfirm({topic: topic, isStarting: true});
+                                }}>New Session
+                            </button>
+                            <div className="topic-selected-buttons">
+                                <button onClick = {() => setEditingTopic(true)}>Edit</button>
+                                <button onClick = {() => deleteTopic(topic._id)}>Delete</button>
+                                <button onClick = {handleGoBack}>Back</button>
+                            </div>
                         </div>
-                        <button 
-                            onClick={() => {
-                                setTopicSelect({topic: {}, isSelected: false})
-                                setSessionConfirm({topic: topic, isStarting: true});
-                            }}>Start
-                        </button>
-                        <button onClick = {() => deleteTopic(topic._id)}>Delete</button>
-                        <button onClick = {() => setEditingTopic(true)}>Edit</button>
-                        <button onClick = {handleGoBack}>Back</button>
                     </dialog>
                 )
             }
