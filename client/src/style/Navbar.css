@@ -1,8 +1,38 @@
 .navbar {
     display: flex;
-    justify-content: space-evenly;
-    background-color: palegreen;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    padding: 10px;
+    background: #99362D;
+    color:#f9f2f1;
+    border-bottom: 3px solid #0e2723;
 }
-.navbar > li {
-    list-style: none;
+.navbar-title {
+    font-size: 2.5em;
+    font-family: 'Acme', sans-serif;
+    font-style: italic;
+}
+.navbar-subtitle {
+    font-size: .8em;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    font-style: initial;
+}
+
+.menu-button {
+    position: absolute;
+    font-size: 1em;
+    padding: 10px;
+    color: #99362D;
+    background: #f4e5e4;
+    border-radius: 10px;
+    border: none;
+    transition: all .1s ease-in;
+    align-self: flex-end;
+
+}
+.menu-button:hover {
+    background: #c95349;
+    color: #f4e5e4;
 }

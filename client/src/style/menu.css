@@ -7,6 +7,7 @@
     margin: 10vh 10vw;
     background-color: lightcyan;
     border: 1px solid salmon;
+    z-index: 3;
     /* transition: all 200ms ease-out; */
 }
 .menu-on {
@@ -14,10 +15,6 @@
 }
 .menu-off {
     left: 100vw;
-}
-
-body{
-    overflow: hidden;
 }
 
 .menu > button {

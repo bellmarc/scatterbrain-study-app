@@ -1,5 +1,32 @@
+/* colors */
+/* white background: #f9f2f1*/
+/* black greenish: #0e2723 */
+/* peach background: #f7cda3*/
+/* dark reddish: #c95349 */
+/* light mint green: #ace2c4 */
+/* mint green: #4ac17e */
+/* grey: #b9bdc0 */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
+.app {
+    position: relative;
+    background: #f7cda3;
+    color: #0e2723;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+body, html{
+    background: #f9f2f1;
+}
+

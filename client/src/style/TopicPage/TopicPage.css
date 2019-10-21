@@ -2,36 +2,54 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid black;
     padding: 10px;
+    height: 100%;
+    max-width: 100%;
 }
 .topic-instructions {
-    border: 2px solid red;
-    
+    background: #f9f2f1;
+    border-radius: 10px;
+    padding: 10px;
+
 }
 .topic-smart-session {
-    height: 50px;
-    width: 100px;
-    border: 2px solid red;
     margin: 10px 0;
+    padding: 20px;
+    color: #f4e5e4;
+    font-size: 1.6em;
+    background: #c95349;
+    border-radius: 10px;
+    border: none;
+    transition: all .1s ease-in;
 }
+.topic-smart-session:hover {
+    background: #f4e5e4;
+    color: #c95349;
+    }
 /* topics list and cards */
 .topic-list {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid red;
+    border-radius: 10px;
     width: 100%;
     list-style: none;
-    padding: 5px;
+    padding: 10px;
+    background: #f9f2f1;
 }
 .topic-card {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr auto;
-    border: 2px solid blue;
-    padding: 2px;
+    padding: 5px;
     margin-top: 2px;
+    border-radius: 8px;
+    box-shadow: -1px 1px 3px #b9bdc0;
+    transition: all .1s ease-in;
+    background: rgba(232,232,232,.5)
+}
+.topic-card:hover {
+    background: #4ac17e;
 }
 
 /* dialog */
@@ -43,23 +61,32 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    border: none;
+    border-radius: 10px;
 }
 
 .start-topic-name {
     font-weight: 900;
-    color: red;
 }
 .start-cancel {
     padding: 5px;
-    border: 2px solid purple;
 }
 .start-confirm {
     padding: 5px;
-    border: 2px solid purple;
 }
 .topic-selected button, .topic-edit button {
-    padding: 5px;
-    border: 2px solid purple;
+    padding: 15px;
+    font-size: 1.5em;
+    border-radius: 10px;
+    background: #ace2c4;
+}
+.topic-selected button:hover, .topic-edit button:hover {
+    background:#4ac17e
+}
+.topic-selected-header {
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 2em;
 }
 
 .topic-edit form {
