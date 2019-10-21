@@ -22,5 +22,8 @@
 .add-priority-btn {
     background-color: whitesmoke;
     border-radius: 4;
+}
 
+b {
+    font-size: 2em;
 }
