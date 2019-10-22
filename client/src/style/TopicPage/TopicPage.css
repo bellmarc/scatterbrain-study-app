@@ -1,48 +1,76 @@
+/* page */
 .topic-page {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 10px;
     height: 100%;
-    max-width: 100%;
+    width: 100%;
 }
+
+/* instructions box */
 .topic-instructions {
     background: #f9f2f1;
     border-radius: 10px;
     padding: 10px;
-
+    font-family: 'Hind', sans-serif;
+    font-size: 1.4em;
+    line-height: 1em;
 }
+.topic-instructions > * {
+    padding: 5px 0;
+}
+/* buttons */
 .topic-smart-session {
     margin: 10px 0;
-    padding: 20px;
-    color: #f4e5e4;
-    font-size: 1.6em;
+    padding: 10px;
+    color: #f9f2f1;
+    font-size: 1.2em;
     background: #c95349;
     border-radius: 10px;
-    border: none;
+    border: 2px solid #c95349;
     transition: all .1s ease-in;
 }
 .topic-smart-session:hover {
-    background: #f4e5e4;
+    background: #f9f2f1;
     color: #c95349;
-    }
+}
+.topic-new-topic {
+    padding: 5px;
+    color: #f9f2f1;
+    background: #c95349;
+    border-radius: 5px;
+    border: none;
+    transition: all .1s ease-in;
+}
+.topic-new-topic:hover {
+    background: #f9f2f1;
+    color: #c95349;
+}
 /* topics list and cards */
 .topic-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     border-radius: 10px;
     width: 100%;
-    list-style: none;
     padding: 10px;
     background: #f9f2f1;
 }
+.topic-list-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+.topic-card-container {
+    list-style: none;
+    grid-column: 1/-1;
+
+}
 .topic-card {
+    font-family: 'Hind', sans-serif;
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 5px;
-    margin-top: 2px;
     border-radius: 8px;
     box-shadow: -1px 1px 3px #b9bdc0;
     transition: all .1s ease-in;
@@ -52,46 +80,95 @@
     background: #4ac17e;
 }
 
-/* dialog */
+/* dialogs */
 .topic-page dialog{
-    height: 80vh;
-    width: 90vw;
-    margin: auto;
+    position: fixed;
+    top:0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     border: none;
-    border-radius: 10px;
+    background: rgba(0,0,0,.7)
 }
-
+.start-session-container, .topic-selected-container, .topic-edit-form {
+    background: #f9f2f1;
+    min-height: 300px;
+    max-height: 500px;
+    min-width: 300px;
+    max-width: 90%;
+    border-radius: 10px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+/* start session */
 .start-topic-name {
     font-weight: 900;
+    font-size: 1.6em;
+    padding: 20px 0;
+    text-align: center;
 }
-.start-cancel {
-    padding: 5px;
+.start-session-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
 }
-.start-confirm {
-    padding: 5px;
-}
-.topic-selected button, .topic-edit button {
-    padding: 15px;
-    font-size: 1.5em;
-    border-radius: 10px;
-    background: #ace2c4;
-}
-.topic-selected button:hover, .topic-edit button:hover {
-    background:#4ac17e
-}
-.topic-selected-header {
+.topic-page dialog button {
+    background: #4ac17e;
+    min-width: 75px;
+    font-size: 1em;
+    border-radius: 5px;
     padding: 10px;
-    border-radius: 10px;
-    font-size: 2em;
 }
 
-.topic-edit form {
-    display: flex; 
-    flex-direction: column;
-    align-items: center;
+/* topic selected */
+.topic-page dialog .topic-selected-start {
+    margin: 10px 0;
+    padding: 10px;
+    color: #f9f2f1;
+    font-size: 1.2em;
+    background: #c95349;
+    border-radius: 10px;
+    border: none;
+}
+.topic-page dialog .topic-selected-start:hover {
+    background: #f9f2f1;
+    color: #c95349;
+}
+.topic-selected-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    font-size: .8em;
+}
+.topic-selected-container h1 {
+    font-size: 1.8em;
+}
+.topic-selected-container h3 {
+    font-size: 1.2em;
+}
+
+/* topic edit */
+.topic-edit-form input {
+    text-align: center;
+}
+.topic-edit-buttons {
+    width: 100%;
+    font-size: .8em;
+    display: flex;
+    justify-content: space-around;
+}
+.topic-edit-input-topic{
+    font-size: 1.8em;
+    width: 100%;
+}
+.topic-edit-input-priority {
+    font-size: 1.2em;
 }
 
