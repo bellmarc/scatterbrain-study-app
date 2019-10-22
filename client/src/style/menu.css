@@ -8,6 +8,8 @@
     background-color: lightcyan;
     border: 1px solid salmon;
     z-index: 3;
+    border-radius: 10px;
+
     /* transition: all 200ms ease-out; */
 }
 .menu-on {
@@ -17,7 +19,39 @@
     left: 100vw;
 }
 
+
 .menu > button {
     border: none;
     width: 100%;
+    padding: 10px;
+    height: 50px;
+    font-size: 14pt;
+    transition: all 100ms ease;
+    cursor: pointer;
+}
+.menu > button:hover {
+    /* transform: scale(1.2); */
+    font-size: 18pt;
+}
+
+.menu > .header > .close-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 2.3em;
+    margin: 10px;
+    border: none;
+    background-color: #f7cda3;
+    color: #99362D;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 100ms ease;
+}
+.menu > .header > .close-btn:hover {
+    transform: scale(1.2);
+}
+
+.menu > .header {
+    display: flex;
+    justify-content: flex-end;
+    height: 25vh;
 }
