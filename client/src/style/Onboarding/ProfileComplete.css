@@ -26,14 +26,21 @@
   align-items: center;
 }
 .profile-complete-btn {
-  background-color: #c95349;
+  background-color: #4ac17e;
   color: #f4e5e4;
   border-radius: 10px;
   font-size: 1.2em;
   margin-bottom: 25px;
   width: 100px;
   height: 50px;
+  border: 2px solid #4ac17e;
+  transition: all .1s ease-in;
 }
+.profile-complete-btn:hover {
+  background-color: #ace2c4;
+  color: #4ac17e;
+}
+
 .skip-btn {
   font-size: 12px;
 }

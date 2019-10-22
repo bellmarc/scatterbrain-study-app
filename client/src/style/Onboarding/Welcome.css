@@ -16,6 +16,7 @@
 .welcome-info {
   line-height: 1.5em;
   margin-bottom: 10px;
+  font-family: 'Hind', sans-serif;
 }
 .text-container {
   background: #f7cda3;
@@ -32,4 +33,10 @@
   margin: 10px 0;
   padding: 15px;
   margin-bottom: 35px;
+  border: 2px solid #c95349;
+  transition: all .1s ease-in;
+}
+.welcome-btn:hover {
+  background-color: #f4e5e4;
+  color: #c95349;
 }

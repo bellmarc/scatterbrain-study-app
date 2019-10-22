@@ -44,8 +44,9 @@ function AddPriority(props) {
         </h5>
         <form onSubmit={
           updateTopicWithPriority
-        } className="priority-btn-container">
-          <button type="minus-button" onClick={decrement}>
+        } className="priority-form">
+        <div className="priority-btn-container">
+          <button className="minus-button" type="minus-button" onClick={decrement}>
             <b>-</b>
           </button>
           <input
@@ -58,9 +59,10 @@ function AddPriority(props) {
             onChange={handleChange}
             value={priority}
           ></input>
-          <button type="add-button" onClick={increment}>
+          <button className="add-button" type="add-button" onClick={increment}>
             <b>+</b>
           </button>
+        </div>
             <button className="add-priority-btn">
                 Add
             </button>

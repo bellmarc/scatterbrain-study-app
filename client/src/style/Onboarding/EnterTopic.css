@@ -12,6 +12,7 @@
   margin-bottom: 15px;
 }
 .enter-topic-subheader {
+  font-family: 'Hind', sans-serif;
   font-size:20px;
 }
 .enter-topic-text-container {
@@ -26,6 +27,7 @@
   font-size:18px;
   margin-top: 20px;
   margin-bottom: 25px;
+  border: none;
 }
 
 .enter-topic-btn {
@@ -36,6 +38,8 @@
   margin: 10px;
   padding: 12px;
   width: 90px;
+  border: 2px solid #c95349;
+  transition: all .1s ease-in;
 }
 .enter-topic-btn:hover {
   background-color: #f4e5e4;

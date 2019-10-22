@@ -16,9 +16,11 @@
 }
 .topic-text {
   line-height: 1.5;
+  font-family: 'Hind', sans-serif;
   margin-bottom: 20px;
 }
 .priority-text {
+  font-family: 'Hind', sans-serif;
   line-height: 1.5;
 }
 .priority-header {
@@ -41,6 +43,8 @@
   margin: 25px 0;
   width: 100px;
   padding: 10px;
+  border: 2px solid #c95349;
+  transition: all .1s ease-in;
 }
 
 .how-btn:hover {

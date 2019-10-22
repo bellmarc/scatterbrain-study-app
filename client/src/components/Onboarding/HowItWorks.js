@@ -12,7 +12,7 @@ function HowItWorks(props) {
           Defines what you will cover during your self-governed study session.
         </p>
         <h2 className="priority-header">Priority</h2>
-        <p>Refers to the importance of a topic on your study list.</p>
+        <p className="priority-text">Refers to the importance of a topic on your study list.</p>
         <Link to={"/onboard/startProfile"}>
           <button type="button" className="how-btn">Next</button>
       </Link>
