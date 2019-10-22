@@ -6,7 +6,7 @@
 /* light mint green: #ace2c4 */
 /* mint green: #4ac17e */
 /* grey: #b9bdc0 */
-/* dark red navbar: #99362D */
+/* dark red navbar:  */
 
 * {
   box-sizing: border-box;
@@ -16,7 +16,7 @@
 
 .app {
     position: relative;
-    background: #f7cda3;
+    background: #f9f2f1;
     color: #0e2723;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;

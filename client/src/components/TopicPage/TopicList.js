@@ -13,7 +13,7 @@ function TopicList(props){
     ));
 
     return (
-        <div className="topic-list">
+        <section className="topic-list">
             <div className="topic-list-header">
                 <h3>Your Study Topics</h3>
                 <button className="topic-new-topic" onClick={()=> props.history.push("/onboard/enterTopic")}>New Topic</button>
@@ -21,7 +21,7 @@ function TopicList(props){
             <ul className="topic-card-container">
                 {mappedTopics}
             </ul>
-        </div>
+        </section>
     )
 }
 
