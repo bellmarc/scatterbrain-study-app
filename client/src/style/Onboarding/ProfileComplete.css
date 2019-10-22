@@ -1,12 +1,23 @@
 .profile-complete-page {
-  background-image: linear-gradient(to top right, #4bc0c8, #f5eeee);
-  background-color: #f5eeee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  height: 100%;
+  max-width: 100%;
+  background-color: #f9f2f1;
+}
+.profile-complete-header {
+  margin-top: 15px;
+  margin-bottom: 40px;
 }
 .profile-complete-text {
   align-content: center;
+  background: #f7cda3;
   text-align: center;
+  border-radius: 10px;
+  padding: 10px;
 }
-
 .profile-complete-input {
   width: 200px;
   height: 30px;
@@ -14,6 +25,15 @@
 .profile-complete-btn-container {
   align-items: center;
 }
+.profile-complete-btn {
+  background-color: #c95349;
+  color: #f4e5e4;
+  border-radius: 10px;
+  font-size: 1.2em;
+  margin-bottom: 25px;
+  width: 100px;
+  height: 50px;
+}
 .skip-btn {
-    font-size:12px;
+  font-size: 12px;
 }

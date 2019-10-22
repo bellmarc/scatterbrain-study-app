@@ -38,8 +38,8 @@ function AddPriority(props) {
   return (
     <div className="add-priority-page">
       <div className="add-priority-text">
-        <h1>Do You want to Add Priority to your Topic?</h1>
-        <h5>
+        <h1 className="add-priority-header">Do You want to Add Priority to your Topic?</h1>
+        <h5 className="add-priority-subheader">
           <em>A Higher priority (i.e. 5) is more important.</em>
         </h5>
         <form onSubmit={

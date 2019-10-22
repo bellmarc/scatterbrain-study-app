@@ -16,17 +16,13 @@ function EnterTopic(props) {
     axios.post("/topics",
     { topic: topic, userId: currentUser._id
     }) //need to get userId {topic: topic, userId: currentUser._id }
-    .then(res => {
-    console.log(res.data) //userBrowser.add to save to LS
-    return res
-    })
     .then(res => props.history.push(`/onboard/addPriority/${res.data._id}`))
-    .catch(err => console.log(err))
+    .catch(err => err)
   }
 
   return (
     <main className="enter-topic-page">
-      <section className="enter-topic-text">
+      <section className="enter-topic-text-container">
         <h1 className="enter-topic-header">Enter a Topic To Get Started</h1>
         <h4 className="enter-topic-subheader">
           <em>Ex: ReactJS</em>

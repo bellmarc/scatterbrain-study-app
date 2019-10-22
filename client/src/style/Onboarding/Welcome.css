@@ -9,9 +9,14 @@
 }
 
 .welcome-header {
-  margin-bottom: 20px;
+  margin-top: 15px;
+  margin-bottom: 40px;
 }
 
+.welcome-info {
+  line-height: 1.5em;
+  margin-bottom: 10px;
+}
 .text-container {
   background: #f7cda3;
   text-align: center;
@@ -21,8 +26,10 @@
 
 .welcome-btn {
   background-color: #c95349;
+  color: #f4e5e4;
   border-radius: 10px;
   font-size: 1.5em;
   margin: 10px 0;
   padding: 15px;
+  margin-bottom: 35px;
 }
