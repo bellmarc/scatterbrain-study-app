@@ -45,7 +45,8 @@ function TopicSelected(props){
                                 value = {formState.topic}
                                 onChange = {handleChange}
                             />
-                            <label>Priority: 
+                            <div className="edit-priority-container">
+                                <div>Priority: </div>
                                 <input className="topic-edit-input-priority"
                                     type = "number"
                                     min = "0"
@@ -55,7 +56,7 @@ function TopicSelected(props){
                                     value = {formState.priority}
                                     onChange = {handleChange}
                                 />
-                            </label>
+                            </div>
                             <div className="topic-edit-buttons">
                                 <button type="submit">Save Changes</button>
                                 <button onClick = {() => setEditingTopic(false)}>Cancel</button>
@@ -66,7 +67,10 @@ function TopicSelected(props){
                     <dialog className="topic-selected-background">
                         <div className="topic-selected-container">
                             <h1>{topic.topic} </h1>
-                            <h3>Priority: {topic.priority} </h3>
+                            <div className="topic-selected-priority">
+                                <h3>Priority:</h3>
+                                <h3>{topic.priority}</h3>
+                            </div>
                             <button className="topic-selected-start"
                                 onClick={() => {
                                     setTopicSelect({topic: {}, isSelected: false})
