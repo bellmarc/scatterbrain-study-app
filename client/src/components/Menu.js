@@ -22,11 +22,13 @@ const Menu = (props) => {
 
   return props.close ? (
     <div className={className} style={{transition: `all ${props.speed}ms ease-out`}}>
-      Menu
-      <button onClick = { ()=>{
+      <div className="header">
+
+      <button className="close-btn" onClick = { ()=>{
           setClassName ('menu menu-off')
           setTimeout(()=>props.close(),props.speed)
-        } }>Close</button>
+        } }>⨯</button>
+      </div>
       <button onClick = { ()=>push('/topics') } >Topics</button>
       <button onClick = { ()=>push('/history') } >History</button>
       <button onClick = { ()=>push('/settings') } >Settings</button>
