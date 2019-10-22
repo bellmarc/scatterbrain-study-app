@@ -25,25 +25,25 @@ function EnterTopic(props) {
   }
 
   return (
-    <div className="enter-topic-page">
-      <div className="enter-topic-text">
-        <h1>Enter a Topic To Get Started</h1>
-        <h4>
+    <main className="enter-topic-page">
+      <section className="enter-topic-text">
+        <h1 className="enter-topic-header">Enter a Topic To Get Started</h1>
+        <h4 className="enter-topic-subheader">
           <em>Ex: ReactJS</em>
         </h4>
         <form onSubmit={(e)=> {
           e.preventDefault()
           addNewTopic()
          }} className="topic-input-container">
-          <input type="text" name="name" placeholder="Type your topic" onChange={handleChange} value={topic}/>
+          <input className="enter-topic-input" type="text" name="name" placeholder="Type your topic" onChange={handleChange} value={topic}/>
         <button
         className="enter-topic-btn"
         >
           Next
         </button>
         </form>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
 

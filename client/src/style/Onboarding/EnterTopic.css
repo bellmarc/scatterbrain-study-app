@@ -2,13 +2,27 @@
   background-image: linear-gradient(to top right, #4bc0c8, #f5eeee);
   background-color: #f5eeee;
 }
-
+.enter-topic-header {
+  font-size:30px;
+}
+.enter-topic-subheader {
+  font-size:20px;
+}
 .enter-topic-text {
   border: 1px solid black;
   text-align: center;
+}
+
+.enter-topic-input {
+  padding: 6px;
+  font-size:18px;
+  margin-top: 20px;
+  margin-bottom: 25px;
 }
 
 .enter-topic-btn {
   background-color: whitesmoke;
   border-radius: 4;
 }
+
+

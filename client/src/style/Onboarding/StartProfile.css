@@ -1,13 +1,43 @@
-.start-profile {
-    background-image:
-    linear-gradient(
-      to top right,
-      #4BC0C8, #F5EEEE
-    );
-    background-color: #F5EEEE;
+.start-profile-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  height: 100%;
+  max-width: 100%;
+  background-color: #f9f2f1;
+}
+
+.start-profile-header {
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.start-profile-subheader {
+  font-size:20px;
 }
 
 .start-profile-text-container {
-    text-align: center;
-    border: 1px solid black;
+  text-align: center;
+  background: #f7cda3;
+  border-radius: 10px;
+  padding: 10px;
+}
+.start-profile-form {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.start-profile-input {
+  padding: 10px;
+  font-size:18px;
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+.start-profile-btn {
+  background-color: #c95349;
+  border-radius: 10px;
+  font-size: 1.5em;
+  margin: 10px;
+  padding: 15px;
 }

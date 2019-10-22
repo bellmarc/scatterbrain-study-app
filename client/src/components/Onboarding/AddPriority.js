@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import "../../style/Onboarding/AddPriority.css";
 import userBrowser from '../../functions/User/Browser.js';
 import axios from "axios";
-import { set } from "mongoose";
 
 function AddPriority(props) {
   const[priority, setPriority] = useState(0)
   const topicId = props.match.params.topicId
   const currentUser = userBrowser.get()
 
-  const handleChange = (e) => { //payload
+  const handleChange = (e) => {
     e.preventDefault()
     setPriority(e.target.value)
   }
@@ -22,8 +21,7 @@ function AddPriority(props) {
   const decrement = (e)=> { e.preventDefault()
     if (priority > 0 ){
       setPriority(priority - 1)
-    }}
-
+  }}
 
 
   const updateTopicWithPriority = (e) => {
