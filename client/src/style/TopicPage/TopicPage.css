@@ -6,6 +6,9 @@
     padding: 10px;
     height: 100%;
     width: 100%;
+    background: #f7cda3;
+    max-width: 900px;
+    margin: auto;
 }
 
 /* instructions box */
@@ -41,6 +44,7 @@
     background: #c95349;
     border-radius: 5px;
     border: none;
+    border: 2px solid #c95349;
     transition: all .1s ease-in;
 }
 .topic-new-topic:hover {
@@ -51,12 +55,14 @@
 .topic-list {
     border-radius: 10px;
     width: 100%;
+    max-width: 500px;
     padding: 10px;
     background: #f9f2f1;
 }
 .topic-list-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 5px 0;
 }
 .topic-card-container {
@@ -125,6 +131,11 @@
     font-size: 1em;
     border-radius: 5px;
     padding: 10px;
+    border:none;
+    transition: all .1s ease-in;
+}
+.topic-page dialog button:hover {
+    background: #ace2c4;
 }
 
 /* topic selected */
@@ -135,7 +146,8 @@
     font-size: 1.2em;
     background: #c95349;
     border-radius: 10px;
-    border: none;
+    transition: all .1s ease-in;
+    border: 2px solid #c95349;
 }
 .topic-page dialog .topic-selected-start:hover {
     background: #f9f2f1;
@@ -157,6 +169,11 @@
 /* topic edit */
 .topic-edit-form input {
     text-align: center;
+    border: 1px solid #b9bdc0;
+}
+.topic-edit-label {
+    position: relative;
+    right: 10px;
 }
 .topic-edit-buttons {
     width: 100%;
@@ -168,7 +185,44 @@
     font-size: 1.8em;
     width: 100%;
 }
-.topic-edit-input-priority {
-    font-size: 1.2em;
+.edit-priority-container, .topic-selected-priority {
+    font-size: 1.4em;
+    text-align: center;
 }
 
+.edit-priority-container input {
+    font-size: 1.4em;
+}
+@media only screen and (min-width: 500px) {
+    .topic-page > section {
+        padding: 20px;
+        margin: 20px;
+    }
+    .topic-smart-session {
+        font-size: 1.8em;
+        padding: 15px;
+    }
+    .topic-new-topic {
+        font-size: 1.2em;
+    }
+    .topic-list-header h3 {
+        font-size: 1.4em;
+    }
+    .start-session-container, .topic-selected-container, .topic-edit-form {
+        padding: 20px;
+        min-height: 500px;
+        min-width: 400px;
+    }
+    .topic-edit-buttons{
+        font-size: initial;
+    }
+}
+
+@media only screen and (min-height: 750px) {
+    .topic-page > section {
+        margin-top: 50px;
+    }
+    .topic-smart-session {
+        margin-top: 50px;
+    }
+}
