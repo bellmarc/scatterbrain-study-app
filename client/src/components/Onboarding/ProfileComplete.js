@@ -4,15 +4,15 @@ import { Link } from "react-router-dom";
 
 function ProfileComplete(props) {
   return (
-    <div className="profile-complete-page">
-      <div className="profile-complete-text">
-        <h1>Topics Are All Added</h1>
+    <main className="profile-complete-page">
+      <section className="profile-complete-text">
+        <h1 className="profile-complete-header">Topics Are All Added!</h1>
         {/* Mascot Icon here */}
-        <Link to={"/topic"} className="profile-complete-btn">
-          Let's go
+        <Link to={"/topic"} >
+        <button className="profile-complete-btn">Let's go</button>
         </Link>
-        </div>
-      </div>
+        </section>
+      </main>
   );
 }
 

@@ -1,14 +1,53 @@
-.how-text-container {
-  border: 1px solid black;
-  text-align: center;
-}
-
 .how-page {
-  background-image: linear-gradient(to top right, #4bc0c8, #f5eeee);
-  background-color: #f5eeee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  height: 100%;
+  max-width: 100%;
+  background-color: #f9f2f1;
+}
+.how-header {
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+.topic-header {
+  margin-bottom: 10px;
+}
+.topic-text {
+  line-height: 1.5;
+  font-family: 'Hind', sans-serif;
+  margin-bottom: 20px;
+}
+.priority-text {
+  font-family: 'Hind', sans-serif;
+  line-height: 1.5;
+}
+.priority-header {
+  margin-bottom: 10px;
+}
+.how-text-container {
+  background: #f7cda3;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  padding-bottom: 20px;
+  /* margin: 20px; */
 }
 
 .how-btn {
-  background-color: whitesmoke;
-  border-radius: 4;
+  background-color: #c95349;
+  color:#f4e5e4;
+  border-radius: 10px;
+  font-size: 1.5em;
+  margin: 25px 0;
+  width: 100px;
+  padding: 10px;
+  border: 2px solid #c95349;
+  transition: all .1s ease-in;
+}
+
+.how-btn:hover {
+  background-color:#f4e5e4;
+  color: #c95349;
 }
