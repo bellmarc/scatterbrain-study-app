@@ -18,11 +18,9 @@ function TopicSelected(props){
     const handleSubmit = e => {
         e.preventDefault()
 
-        const changedTopic = {topic: formState.topic, currentWeight: Number(formState.priority)}
-        console.log(changedTopic)
+        const changedTopic = {topic: formState.topic, priority: Number(formState.priority)}
         axios.put(`/topics/${currentUser._id}/${topic._id}`, changedTopic)
             .then(res => {
-
                 setTopics(prevTopics => {
                     const newTopicIndex = prevTopics.findIndex(prevTopic => prevTopic._id === topic._id);
                     prevTopics[newTopicIndex] = res.data;
@@ -39,16 +37,16 @@ function TopicSelected(props){
             {   
                 editingTopic ? (
                     <dialog className="topic-edit-background">
-                        <div className="topic-edit-container">
-                            <form onSubmit = {handleSubmit}>
-                                <input 
-                                    type = "text" 
-                                    name = "topic"
-                                    required
-                                    value = {formState.topic}
-                                    onChange = {handleChange}
-                                />
-                                <input 
+                        <form className="topic-edit-form" onSubmit = {handleSubmit}>
+                            <input className="topic-edit-input-topic"
+                                type = "text" 
+                                name = "topic"
+                                required
+                                value = {formState.topic}
+                                onChange = {handleChange}
+                            />
+                            <label>Priority: 
+                                <input className="topic-edit-input-priority"
                                     type = "number"
                                     min = "0"
                                     max = "5"
@@ -57,10 +55,12 @@ function TopicSelected(props){
                                     value = {formState.priority}
                                     onChange = {handleChange}
                                 />
+                            </label>
+                            <div className="topic-edit-buttons">
                                 <button type="submit">Save Changes</button>
-                            </form>
-                            <button onClick = {() => setEditingTopic(false)}>Cancel</button>
-                        </div>
+                                <button onClick = {() => setEditingTopic(false)}>Cancel</button>
+                            </div>
+                        </form>
                     </dialog>
                 ):(
                     <dialog className="topic-selected-background">
