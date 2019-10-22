@@ -1,14 +1,48 @@
 .enter-topic-page {
-  background-image: linear-gradient(to top right, #4bc0c8, #f5eeee);
-  background-color: #f5eeee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  height: 100%;
+  max-width: 100%;
+  background-color: #f9f2f1;
 }
-
-.enter-topic-text {
-  border: 1px solid black;
+.enter-topic-header {
+  font-size:30px;
+  margin-bottom: 15px;
+}
+.enter-topic-subheader {
+  font-family: 'Hind', sans-serif;
+  font-size:20px;
+}
+.enter-topic-text-container {
+  background: #f7cda3;
+  border-radius: 10px;
+  padding: 10px;
   text-align: center;
 }
 
-.enter-topic-btn {
-  background-color: whitesmoke;
-  border-radius: 4;
+.enter-topic-input {
+  padding: 6px;
+  font-size:18px;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  border: none;
 }
+
+.enter-topic-btn {
+  background-color: #c95349;
+  color:#f4e5e4;
+  border-radius: 10px;
+  font-size: 1.5em;
+  margin: 10px;
+  padding: 12px;
+  width: 90px;
+  border: 2px solid #c95349;
+  transition: all .1s ease-in;
+}
+.enter-topic-btn:hover {
+  background-color: #f4e5e4;
+  color: #c95349;
+}
+
