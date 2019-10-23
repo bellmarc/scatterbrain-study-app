@@ -4,35 +4,40 @@
   align-items: center;
   padding: 10px;
   height: 100%;
-  max-width: 100%;
+  max-width: 900px;
+  margin: auto;
   background-color: #f9f2f1;
 }
 .how-header {
-  margin-top: 15px;
-  margin-bottom: 25px;
+  font-size: 40px;
+  padding-top: 40px;
+  padding-bottom: 60px;
 }
 .topic-header {
-  margin-bottom: 10px;
+  font-size: 28px;
+  padding-bottom: 10px;
 }
 .topic-text {
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 1.8;
   font-family: 'Hind', sans-serif;
-  margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 .priority-text {
+  font-size: 18px;
   font-family: 'Hind', sans-serif;
-  line-height: 1.5;
+  line-height: 1.8;
+  padding-bottom: 50px;
 }
 .priority-header {
-  margin-bottom: 10px;
+  font-size: 28px;
+  padding-bottom: 10px;
 }
 .how-text-container {
   background: #f7cda3;
   border-radius: 10px;
   padding: 10px;
   text-align: center;
-  padding-bottom: 20px;
-  /* margin: 20px; */
 }
 
 .how-btn {
@@ -41,8 +46,9 @@
   border-radius: 10px;
   font-size: 1.5em;
   margin: 25px 0;
+  margin-bottom: 48px;
   width: 100px;
-  padding: 10px;
+  padding: 15px;
   border: 2px solid #c95349;
   transition: all .1s ease-in;
 }
@@ -50,4 +56,18 @@
 .how-btn:hover {
   background-color:#f4e5e4;
   color: #c95349;
+}
+
+@media only screen and (min-width: 500px) {
+
+  .how-text-container {
+    /* padding: 35px; */
+  }
+}
+
+@media only screen and (min-height: 750px) {
+  .how-page > section {
+    padding: 10px;
+    margin: 10px;
+  }
 }

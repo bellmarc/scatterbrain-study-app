@@ -1,28 +1,39 @@
+.onboarding-container {
+  width: 100%;
+  height: 100%;
+  background-color: #f7cda3;
+}
+
 .welcome-page {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 10px;
   height: 100%;
-  max-width: 100%;
+  max-width: 900px;
+  margin: auto;
   background-color: #f9f2f1;
 }
 
 .welcome-header {
+  border-radius: 10px;
+  background-color: #f9f2f1;
+  padding:40px;
   margin-top: 15px;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 
 .welcome-info {
   line-height: 1.5em;
-  margin-bottom: 10px;
+  margin-bottom: 36px;
   font-family: 'Hind', sans-serif;
 }
-.text-container {
+.welcome-text-container {
+  max-width: 500px;
   background: #f7cda3;
   text-align: center;
   border-radius: 10px;
-  padding: 10px;
+  /* padding: 10px; */
 }
 
 .welcome-btn {
@@ -32,11 +43,49 @@
   font-size: 1.5em;
   margin: 10px 0;
   padding: 15px;
-  margin-bottom: 35px;
+  margin-bottom: 48px;
   border: 2px solid #c95349;
   transition: all .1s ease-in;
 }
 .welcome-btn:hover {
   background-color: #f4e5e4;
   color: #c95349;
+}
+
+@media only screen and (min-width: 500px) {
+  .welcome-page > section {
+    margin: 25px;
+    padding: 20px;
+  }
+  .welcome-header {
+    font-size: 1.3em;
+  }
+  .welcome-text-container {
+    padding: 35px;
+  }
+  .welcome-info {
+    font-size: 1.2em;
+    padding: 15px;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  .welcome-page {
+    padding-top: 40px;
+    max-width: 1200px;
+  }
+  .welcome-header {
+    font-size: 25px;
+  }
+  .welcome-info {
+    padding:50px;
+    font-size: 24px;
+  }
+  .welcome-text-container {
+    max-width: 600px;
+  }
+  .welcome-btn {
+    font-size: 1.8em;
+    padding: 25px;
+  }
 }
