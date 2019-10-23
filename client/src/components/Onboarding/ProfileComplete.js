@@ -8,7 +8,7 @@ function ProfileComplete(props) {
       <section className="profile-complete-text">
         <h1 className="profile-complete-header">Topics Are All Added!</h1>
         {/* Mascot Icon here */}
-        <Link to={"/topic"} >
+        <Link to={"/topics"} >
         <button className="profile-complete-btn">Let's go</button>
         </Link>
         </section>
