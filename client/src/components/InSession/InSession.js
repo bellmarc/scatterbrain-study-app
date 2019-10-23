@@ -5,7 +5,7 @@ import { get as getUser } from '../../functions/User/Browser'
 import Axios from 'axios';
 
 const InSession = (props) => {
-  const [ done, setDone ] = useState({});
+  // const [ done, setDone ] = useState({});
   const [ topic, setTopic ] = useState({});
   const { topicId } = props.match.params;
   const currentUser = getUser();
@@ -45,7 +45,7 @@ const InSession = (props) => {
           <h3>You're Studying:</h3>
           <h1>{topic.topic}</h1>
         </section>
-        <Timer {...done} />
+        <Timer />
         <button className="session-stop-button" onClick={stopSession}>Stop Session</button>
     </main>
   )
