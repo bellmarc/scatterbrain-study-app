@@ -1,5 +1,5 @@
 import React, { useState, useEffect }from 'react';
-import '../../style/TopicPage/TopicPage.css';
+import '../../style/TopicPage.css';
 import TopicList from './TopicList.js';
 import TopicInstructions from './TopicInstructions.js';
 import axios from 'axios';
@@ -7,11 +7,6 @@ import StartSession from './StartSession.js';
 import TopicSelected from './TopicSelected.js';
 import { get as getUser } from '../../functions/User/Browser.js';
 
-//dev user
-// {
-//     "_id": "5da91ba590e48b01c57fa30c",
-//     "name": "Dan"
-// }
 
 function TopicPage(props){
     const [ sessionConfirm, setSessionConfirm ] = useState({topic: {}, isStarting: false});

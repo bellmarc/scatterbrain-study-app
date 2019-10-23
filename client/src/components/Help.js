@@ -2,9 +2,9 @@ import React from 'react';
 
 const Help = (props) => {
   return (
-      <div>
+      <main>
           Help
-      </div>
+      </main>
   )
 }
 

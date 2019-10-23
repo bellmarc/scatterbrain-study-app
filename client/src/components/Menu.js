@@ -6,21 +6,21 @@ import { clear as logout, get as isLoggedIn } from '../functions/User/Browser';
 const Menu = (props) => {
   const currentUser = isLoggedIn();
 
-  const push = (path) => {
+  const handleLink = (path) => {
     props.history.push(path);
+    props.toggleMenu()
   }
 
   return (
     <dialog open className="menu-container">
       <div className='menu' style={{transition: `all ${props.speed}ms ease-out`}}>
-        <button className="menu-close-btn" onClick= {props.toggleMenu}>⨯</button>
-        <button onClick={()=>push('/topics')} >Topics</button>
-        <button onClick={()=>push('/help')} >Help</button>
-        {currentUser && <button onClick={()=>{
+        <div className="menu-close-btn" onClick= {props.toggleMenu}>⨯</div>
+        <div className="menu-option" onClick={()=>handleLink('/topics')} >Topics</div>
+        <div className="menu-option" onClick={()=>handleLink('/help')} >Help</div>
+        {currentUser && <div className="menu-option" onClick={()=>{
           logout()
-          props.toggleMenu()
-          push('/')
-        }} >Log Out</button>}
+          handleLink('/')
+        }} >Log Out</div>}
       </div>
     </dialog>
   )
