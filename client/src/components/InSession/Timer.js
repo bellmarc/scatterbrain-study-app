@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-const Digits = (props) => props.val < 10 ? (<span>0{props.val}</span>) : (<span>{props.val}</span>)
 
+const Digits = (props) => props.val < 10 ? (<span>0{props.val}</span>) : (<span>{props.val}</span>)
 
 const Timer = (props) => {
     const [hours, setHours] = useState(0)
@@ -8,8 +8,8 @@ const Timer = (props) => {
     const [seconds, setSeconds] = useState(0)
     const [pause, setPause] = useState(false)
     
-    props.save && props.save({hours,minutes,seconds})
-
+    // props.save && props.save({hours,minutes,seconds})
+    
     const incrementTime = () => {
         if(pause===false){
             if (seconds >= 59) {
@@ -32,15 +32,14 @@ const Timer = (props) => {
       }, [seconds, minutes, hours, pause])
 
     return (
-        <div style={{background: pause ? 'red' : 'lightgreen',fontSize:50}}>
-            <Digits val={hours}/>:
-            <Digits val={minutes}/>:
-            <Digits val={seconds}/>
-            <div>
-                <button onClick={()=>{setPause(!pause)}}>Pause</button>
-                <span>{pause ? "Timer paused" : ""}</span>
+        <section className="session-timer-container" >
+            <div className="timer-clock" style= {pause ? {color:'#b9bdc0'}: {}}>
+                <Digits val={hours}/>:
+                <Digits val={minutes}/>:
+                <Digits val={seconds}/>
             </div>
-        </div>
+            <button className={`timer-button ${pause ? 'resume':'pause'}`} onClick={()=>{setPause(!pause)}}>{pause ? 'Resume':'Pause'}</button>
+        </section>
     )
   }
 
