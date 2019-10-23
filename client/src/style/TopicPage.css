@@ -131,12 +131,22 @@
     font-size: 1em;
     border-radius: 5px;
     padding: 10px;
-    border:none;
+    border: 2px solid #4ac17e;
     transition: all .1s ease-in;
 }
 .topic-page dialog button:hover {
     background: #ace2c4;
 }
+.topic-page dialog .start-cancel {
+    background: #c95349;
+    border: 2px solid #c95349;
+    color: #f9f2f1;
+}
+.topic-page dialog .start-cancel:hover {
+    color: #c95349;
+    background: #f9f2f1;
+}
+
 
 /* topic selected */
 .topic-page dialog .topic-selected-start {
@@ -152,6 +162,24 @@
 .topic-page dialog .topic-selected-start:hover {
     background: #f9f2f1;
     color: #c95349;
+}
+.topic-page dialog .edit-cancel {
+    background: #c95349;
+    border: 2px solid #c95349;
+    color: #f9f2f1;
+}
+.topic-page dialog .edit-cancel:hover {
+    color: #c95349;
+    background: #f9f2f1;
+}
+.topic-page dialog .topid-cancel {
+    background: #c95349;
+    border: 2px solid #c95349;
+    color: #f9f2f1;
+}
+.topic-page dialog .edit-cancel:hover {
+    color: #c95349;
+    background: #f9f2f1;
 }
 .topic-selected-buttons {
     width: 100%;
