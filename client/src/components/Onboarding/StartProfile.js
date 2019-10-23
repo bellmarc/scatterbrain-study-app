@@ -12,7 +12,7 @@ const handleChange = (e) => {
   return (
     <main className="start-profile-page">
       <section className="start-profile-text-container">
-        <h1 className="start-profile-header">Start Your Profile</h1>
+        <h1 className="start-profile-header">Let's Get Studying!</h1>
         <h2 className="start-profile-subheader">What's Your Name?</h2>
         <form onSubmit={(e) =>  {
           e.preventDefault()

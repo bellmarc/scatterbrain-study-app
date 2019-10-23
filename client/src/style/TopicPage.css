@@ -160,10 +160,11 @@
     font-size: .8em;
 }
 .topic-selected-container h1 {
-    font-size: 1.8em;
+    text-align: center;
+    font-size: 2em;
 }
 .topic-selected-container h3 {
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 /* topic edit */

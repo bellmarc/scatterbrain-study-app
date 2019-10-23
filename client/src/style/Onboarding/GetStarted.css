@@ -1,60 +1,59 @@
-.how-page {
+.get-started-page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
-  padding-top: 25px;
+  padding: 15px;
+  padding-top: 15px;
   height: 100%;
   max-width: 900px;
   margin: auto;
   background-color: #f9f2f1;
 }
-.how-header {
-  font-size: 40px;
-  padding-top: 60px;
-  padding-bottom: 40px;
+.get-started-header {
+  font-size: 30px;
+  padding-top: 5px;
 }
 .topic-header {
-  font-size: 28px;
+  font-size: 24px;
   padding: 15px;
 }
 .topic-text {
-  font-size: 18px;
+  font-size: 14px;
   line-height: 1.8;
   font-family: 'Hind', sans-serif;
-  padding: 10px;
+  padding: 5px;
 }
 .priority-text {
-  font-size: 18px;
+  font-size: 14px;
   font-family: 'Hind', sans-serif;
   line-height: 1.8;
-  padding: 10px;
+  padding: 5px;
 }
 .priority-header {
-  font-size: 28px;
+  font-size: 24px;
   padding: 15px;
 }
-.how-text-container {
+.get-started-text-container {
   background: #f7cda3;
   border-radius: 10px;
   padding: 10px;
   text-align: center;
 }
 
-.how-btn {
+.get-started-btn {
   background-color: #c95349;
   color:#f4e5e4;
   border-radius: 10px;
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin: 25px 0;
-  margin-bottom: 48px;
+  margin-bottom: 22px;
   width: 100px;
   padding: 15px;
   border: 2px solid #c95349;
   transition: all .1s ease-in;
 }
 
-.how-btn:hover {
+.get-started-btn:hover {
   background-color:#f4e5e4;
   color: #c95349;
 }
@@ -66,12 +65,12 @@
 }
 
 @media only screen and (min-height: 750px) {
-  .how-page  {
+  .get-started-page  {
     padding: 30px;
     padding-top: 40px;
     max-width: 1200px;
   }
-  .how-header {
+  .get-started-header {
     padding-top: 30px;
     font-size: 3.0em;
   }

@@ -27,7 +27,7 @@ function EnterTopic(props) {
   return (
     <main className="enter-topic-page">
       <section className="enter-topic-text-container">
-        <h1 className="enter-topic-header">Enter a Topic To Get Started</h1>
+        <h1 className="enter-topic-header">Enter A Topic</h1>
         <h4 className="enter-topic-subheader">
           <em>Ex: ReactJS</em>
         </h4>

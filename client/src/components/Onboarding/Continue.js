@@ -13,7 +13,7 @@ function Continue(props) {
     return (
         <main className="redirect-page">
         <section className="continue-text">
-        <h1 className="continue-header">Would You like to Continue Adding Topic(s)?</h1>
+        <h1 className="continue-header">Would You like to Continue Adding Topics?</h1>
             <section className="continue-btn-container">
                 <button className="yes-btn" onClick={ sendToEnterTopicPage }>
                 Yes
