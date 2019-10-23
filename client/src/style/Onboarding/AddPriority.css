@@ -1,72 +1,82 @@
 .add-priority-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    height: 100%;
-    max-width: 100%;
-    background-color: #f9f2f1;
-}
-.add-priority-text {
-    background: #f7cda3;
-    border-radius: 10px;
-    padding: 10px;
-    align-content: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  height: 100%;
+  max-width: 900px;
+  margin: auto;
+  background-color: #f9f2f1;
 }
 .add-priority-header {
-    margin-top: 25px;
+  padding: 40px;
 }
-
+.add-priority-text {
+  background: #f7cda3;
+  border-radius: 10px;
+  margin-top: 30px;
+  padding: 10px;
+  align-content: center;
+  text-align: center;
+}
 .add-priority-subheader {
-    margin-top: 15px;
-    margin-bottom: 10px;
+  font-family: "Hind", sans-serif;
+  font-size: 18px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 .priority-form {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: center;
-    padding-bottom: 20px;
-}
-.priority-input {
-    padding: 12px;
-    font-size: 20px;
-    border: none;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding-bottom: 80px;
 }
 .priority-btn-container {
-    display: flex;
-    /* align-items: center; */
-    padding:20px;
+  display: flex;
+  padding: 40px;
 }
 .minus-button {
-    background: none;
-    border-radius: 10px;
-    border: none;
+  background: none;
+  border-radius: 10px;
+  border: none;
+}
+.priority-input {
+  padding: 20px;
+  font-size: 1.8em;
+  border: none;
 }
 .add-button {
-    background: none;
-    border-radius: 10px;
-    border: none;
+  background: none;
+  border-radius: 10px;
+  border: none;
 }
 
 .add-priority-btn {
-    background-color: #c95349;
-    color:#f4e5e4;
-    border-radius: 10px;
-    font-size: 1.5em;
-    padding: 12px;
-    width: 100px;
-    max-height: 60px;
-    border: 2px solid #c95349;
-    transition: all .1s ease-in;
+  background-color: #c95349;
+  color: #f4e5e4;
+  border-radius: 10px;
+  font-size: 1.5em;
+  margin-top: 15px;
+  padding: 15px;
+  width: 120px;
+  max-height: 100px;
+  border: 2px solid #c95349;
+  transition: all 0.1s ease-in;
 }
 .add-priority-btn:hover {
-    background-color: #f4e5e4;
-    color: #c95349;
+  background-color: #f4e5e4;
+  color: #c95349;
 }
 
-.priority-btn-container  b {
-    padding: 12px;
-    font-size: 3em;
+.priority-btn-container b {
+  padding: 15px;
+  font-size: 5em;
+  color: #0e2723;
+}
+
+@media only screen and (min-width: 750px) {
+  .add-priority-page {
+    max-width: 1200px;
+  }
 }

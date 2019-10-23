@@ -4,19 +4,32 @@
   align-items: center;
   padding: 10px;
   height: 100%;
-  max-width: 500px;
+  margin: auto;
+  max-width: 900px;
   background-color: #f9f2f1;
 }
 .profile-complete-header {
-  margin-top: 15px;
-  margin-bottom: 40px;
+  padding: 20px;
+  font-size: 2.2em;
+  margin-bottom: 15px;
 }
 .profile-complete-text {
   align-content: center;
   background: #f7cda3;
   text-align: center;
   border-radius: 10px;
+  margin-top: 30px;
   padding: 10px;
+}
+.img-congrats-container {
+  background-color: #f4e5e4;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+}
+.img-congrats {
+  max-width: 50%;
+  height: auto;
 }
 .profile-complete-input {
   width: 200px;
@@ -29,18 +42,35 @@
   background-color: #4ac17e;
   color: #f4e5e4;
   border-radius: 10px;
-  font-size: 1.2em;
-  margin-bottom: 25px;
-  width: 100px;
-  height: 50px;
+  font-size: 1.6em;
+  margin-top: 25px;
+  margin-bottom: 40px;
+  width: 140px;
+  height: 80px;
   border: 2px solid #4ac17e;
-  transition: all .1s ease-in;
+  transition: all 0.1s ease-in;
 }
 .profile-complete-btn:hover {
   background-color: #ace2c4;
   color: #4ac17e;
 }
-
 .skip-btn {
   font-size: 12px;
+}
+
+@media only screen and (min-width: 500px) {
+  .profile-complete-header {
+    padding: 40px;
+    font-size: 2.4em;
+  }
+}
+@media only screen and (min-width: 750px) {
+  .profile-complete-page {
+    max-width: 1200px;
+  }
+  .profile-complete-text {
+    padding: 30px;
+    padding-bottom: 60px;
+    width: 700px;
+  }
 }

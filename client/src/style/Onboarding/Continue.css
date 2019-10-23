@@ -4,50 +4,73 @@
   align-items: center;
   padding: 10px;
   height: 100%;
-  max-width: 100%;
+  max-width: 900px;
+  margin: auto;
   background-color: #f9f2f1;
 }
 .continue-header {
-  margin-top: 15px;
-  margin-bottom: 35px;
+  padding: 40px;
 }
 .continue-text {
   align-content: center;
   background: #f7cda3;
   border-radius: 10px;
+  margin-top: 30px;
   padding: 10px;
   text-align: center;
 }
 .continue-btn-container {
+  margin-top: 40px;
   margin-bottom: 40px;
 }
 .yes-btn {
-  width: 60px;
-  height: 40px;
-  margin-right: 5px;
-  font-size: 1.2em;
+  width: 100px;
+  height: 80px;
+  margin-right: 16px;
+  font-size: 1.6em;
   background-color: #4ac17e;
   color: #f4e5e4;
   border-radius: 10px;
   border: 2px solid #4ac17e;
-  transition: all .1s ease-in;
+  transition: all 0.1s ease-in;
 }
 .yes-btn:hover {
   background-color: #ace2c4;
   color: #4ac17e;
 }
 .no-btn {
-  width: 60px;
-  height: 40px;
-  margin-left: 5px;
-  font-size: 1.2em;
+  width: 100px;
+  height: 80px;
+  margin-left: 16px;
+  font-size: 1.6em;
   background-color: indianred;
   color: #f4e5e4;
   border-radius: 10px;
   border: 2px solid #c95349;
-  transition: all .1s ease-in;
+  transition: all 0.1s ease-in;
 }
 .no-btn:hover {
   background-color: #f4e5e4;
   color: indianred;
+}
+
+@media only screen and (min-width: 500px) {
+  .continue-text {
+    padding-bottom: 100px;
+  }
+  .continue-header {
+    padding: 40px;
+    font-size: 2.4em;
+  }
+}
+@media only screen and (min-width: 750px) {
+  .redirect-page {
+    max-width: 1200px;
+  }
+  .continue-text {
+    width: 700px;
+    margin-top: 80px;
+    padding: 30px;
+    padding-bottom: 100px;
+  }
 }
