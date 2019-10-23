@@ -1,57 +1,66 @@
+.menu-container {
+    font-size: 1.4em;
+    position: fixed;
+    top:0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: rgba(0,0,0,.7)
+}
+
 .menu {
+    position:relative;
+    background: #f9f2f1;
+    color: #0e2723;
+    min-height: 300px;
+    max-height: 500px;
+    min-width: 300px;
+    max-width: 500px;
+    width: 80%;
+    border-radius: 10px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.menu-option {
+    width: 100%;
+    box-shadow: -1px 1px 3px #b9bdc0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .1s ease-in;
+    background: rgba(232,232,232,.5);
+    padding: 5px;
+    border-radius: 8px;
+}
+.menu-option:hover {
+    background: #4ac17e;
+}
+.menu-close-btn {
+    font-size: 3em;
+    line-height: 0;
     position: absolute;
     top: 0;
-    left: 0;
-    width: 80vw;
-    height: 80vh;
-    margin: 10vh 10vw;
-    background-color: lightcyan;
-    border: 1px solid salmon;
-    z-index: 3;
-    border-radius: 10px;
-
-    /* transition: all 200ms ease-out; */
+    right: 0;
+    padding: 20px;
+    transition: all .1s ease-in;
 }
-.menu-on {
-    left: 0;
-}
-.menu-off {
-    left: 100vw;
+.menu-close-btn:hover {
+    color: #c95349;
 }
 
-
-.menu > button {
-    border: none;
-    width: 100%;
-    padding: 10px;
-    height: 50px;
-    font-size: 14pt;
-    transition: all 100ms ease;
-    cursor: pointer;
-}
-.menu > button:hover {
-    /* transform: scale(1.2); */
-    font-size: 18pt;
+@media only screen and (min-width: 750px){
+    .menu-container {
+        padding: 20px;
+        min-height: 500px;
+        min-width: 400px;
+    }
 }
 
-.menu > .header > .close-btn {
-    width: 50px;
-    height: 50px;
-    font-size: 2.3em;
-    margin: 10px;
-    border: none;
-    background-color: #f7cda3;
-    color: #99362D;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 100ms ease;
-}
-.menu > .header > .close-btn:hover {
-    transform: scale(1.2);
-}
-
-.menu > .header {
-    display: flex;
-    justify-content: flex-end;
-    height: 25vh;
-}

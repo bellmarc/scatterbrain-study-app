@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { get as getUser } from "../functions/User/Browser"
 
 
 const Landing = (props) => {
   const user = getUser()
-  if(user.name){props.history.push('/topics')} else {props.history.push('/onboard')}
+  
+  useEffect(() => {
+    if(user.name){
+      props.history.push('/topics');
+    } else {
+      props.history.push('/onboard')
+    }
+  }, [])
+
   return (
       <div>
-          Landing
+          You should not be here ;_;
       </div>
   )
 }

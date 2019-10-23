@@ -104,7 +104,7 @@
     }
 
 }
-@media only screen and (min-height: 650px){
+@media only screen and (min-height: 750px){
     .session-page > * {
         margin-top: 50px;
     }
