@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../../style/Onboarding/EnterTopic.css";
 import userBrowser from '../../functions/User/Browser.js';
 import axios from "axios";
@@ -7,6 +7,10 @@ import axios from "axios";
 function EnterTopic(props) {
   const[topic, setTopic] = useState("")
   const currentUser = userBrowser.get()
+
+  useEffect(() => {
+    if (!currentUser) props.history.push('/');
+  },[])
 
   const handleChange = (e) => {
     setTopic(e.target.value)

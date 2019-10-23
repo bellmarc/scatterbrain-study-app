@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../../style/Onboarding/AddPriority.css";
 import userBrowser from '../../functions/User/Browser.js';
 import axios from "axios";
@@ -7,6 +7,10 @@ function AddPriority(props) {
   const[priority, setPriority] = useState(0)
   const topicId = props.match.params.topicId
   const currentUser = userBrowser.get()
+
+  useEffect(() => {
+    if (!currentUser) props.history.push('/');
+  },[])
 
   const handleChange = (e) => {
     e.preventDefault()

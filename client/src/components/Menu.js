@@ -13,7 +13,7 @@ const Menu = (props) => {
 
   return (
     <dialog open className="menu-container">
-      <div className='menu' style={{transition: `all ${props.speed}ms ease-out`}}>
+      <div className='menu' >
         <div className="menu-close-btn" onClick= {props.toggleMenu}>⨯</div>
         <div className="menu-option" onClick={()=>handleLink('/topics')} >Topics</div>
         <div className="menu-option" onClick={()=>handleLink('/help')} >Help</div>
