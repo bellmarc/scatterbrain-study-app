@@ -11,7 +11,7 @@ import { Switch, Route } from "react-router-dom";
 //hook here, save userName to context dummy array in meantime
 const Onboarding = () => {
   return (
-    <div>
+    <div className="onboarding-container">
       {/* if else switching routes (displays each onboarding component) */}
       <Switch>
         <Route exact path="/onboard" component={ Welcome } />

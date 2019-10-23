@@ -11,7 +11,7 @@ const handleChange = (e) => {
 }
   return (
     <main className="start-profile-page">
-      <div className="start-profile-text-container">
+      <section className="start-profile-text-container">
         <h1 className="start-profile-header">Start Your Profile</h1>
         <h2 className="start-profile-subheader">What's Your Name?</h2>
         <form onSubmit={(e) =>  {
@@ -30,7 +30,7 @@ const handleChange = (e) => {
           Get Started
         </button>
         </form>
-      </div>
+      </section>
     </main>
   );
 }

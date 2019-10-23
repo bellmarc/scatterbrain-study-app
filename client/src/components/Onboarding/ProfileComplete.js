@@ -8,9 +8,14 @@ function ProfileComplete(props) {
       <section className="profile-complete-text">
         <h1 className="profile-complete-header">Topics Are All Added!</h1>
         {/* Mascot Icon here */}
-        <Link to={"/topics"} >
-        <button className="profile-complete-btn">Let's go</button>
-        </Link>
+        <div className="img-congrats-container">
+          <a href="https://icon-library.net/3e1b7a329e.svg.html" title="Line,Font,Logo,Graphics # 38910"><img className="img-congrats" src="https://icon-library.net/images/3e1b7a329e.svg.svg" width="350" /></a>
+        </div>
+        <div className="profile-btn-container">
+           <Link to={"/topics"} >
+              <button className="profile-complete-btn">Let's go</button>
+          </Link>
+        </div>
         </section>
       </main>
   );
