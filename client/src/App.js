@@ -10,7 +10,6 @@ import TopicsPage from './components/TopicPage/TopicPage.js';
 import Navbar from './components/Navbar';
 
 function App() {
-
     return (
         <div className='app'>
             <Navbar />
