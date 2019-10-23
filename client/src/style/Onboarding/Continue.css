@@ -9,7 +9,8 @@
   background-color: #f9f2f1;
 }
 .continue-header {
-  padding: 40px;
+  font-size: 26px;
+  padding: 25px;
 }
 .continue-text {
   align-content: center;
@@ -25,9 +26,9 @@
 }
 .yes-btn {
   width: 100px;
-  height: 80px;
+  height: 70px;
   margin-right: 16px;
-  font-size: 1.6em;
+  font-size: 1.4em;
   background-color: #4ac17e;
   color: #f4e5e4;
   border-radius: 10px;
@@ -40,7 +41,7 @@
 }
 .no-btn {
   width: 100px;
-  height: 80px;
+  height: 70px;
   margin-left: 16px;
   font-size: 1.6em;
   background-color: indianred;

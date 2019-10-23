@@ -6,14 +6,12 @@ function Welcome(props) {
   return (
     <main className="welcome-page">
       <section className="welcome-text-container">
-        <div className="welcome-header">
-        <h1>Welcome</h1>
-        <h3>to</h3>
-        <h2>Scatterbrain Study Tool</h2>
+        <div className="welcome-header-container">
+        <h1 className="welcome-header">Scatterbrain Study Tool</h1><h3 className="welcome-subheader">The tool that helps you decide what to study.</h3>
         </div>
         <p className="welcome-info">
-          Having a hard time deciding what to study? We utilize a space-learning repetition
-          system that tailors to your study needs.
+          Scatterbrain uses a spaced-learning repetition
+          system that enhances your study sessions by selecting a topic to review.
         </p>
           <section className="btn-section">
           <button className="welcome-btn" onClick={()=> props.history.push("/onboard/how")}>Get Started</button>

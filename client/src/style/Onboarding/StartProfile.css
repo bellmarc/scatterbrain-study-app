@@ -10,9 +10,8 @@
 }
 
 .start-profile-header {
-  font-size: 40px;
-  padding-top: 30px;
-  padding-bottom: 15px;
+  font-size: 26px;
+  padding: 10px;
 }
 
 .start-profile-subheader {
@@ -23,16 +22,16 @@
 .start-profile-text-container {
   background: #f7cda3;
   border-radius: 10px;
-  margin-top: 30px;
-  padding: 40px;
+  margin-top: 10px;
+  padding: 10px;
   text-align: center;
 }
 .start-profile-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  margin-bottom: 20px;
+  padding: 30px;
+  margin-bottom: 100px;
 }
 .start-profile-input {
   font-family: "Hind", sans-serif;
@@ -47,7 +46,7 @@
   background-color: #c95349;
   color: #f4e5e4;
   border-radius: 10px;
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin: 10px;
   padding: 15px;
   border: 2px solid #c95349;
@@ -58,6 +57,7 @@
   background-color: #f4e5e4;
   color: #c95349;
 }
+
 @media only screen and (min-width: 750px) {
   .start-profile-page {
     max-width: 1200px;

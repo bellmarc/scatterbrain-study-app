@@ -8,34 +8,41 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
+  padding: 15px;
   height: 100%;
-  max-width: 900px;
+  max-width: 800px;
   margin: auto;
   background-color: #f9f2f1;
 }
 
-.welcome-header {
+.welcome-header-container {
   border-radius: 10px;
   background-color: #f9f2f1;
-  padding: 40px;
-  margin-top: 15px;
-  margin-bottom: 60px;
+  width: 260px;
+  margin: auto;
+  padding: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
-
 .welcome-info {
-  line-height: 1.5em;
-  margin-bottom: 36px;
+  line-height: 1.8em;
+  padding: 10px;
+  margin-bottom: 25px;
   font-family: "Hind", sans-serif;
 }
+.welcome-header {
+  padding-bottom: 10px;
+}
+.welcome-subheader {
+  line-height: 1.4em;
+}
 .welcome-text-container {
-  max-width: 500px;
+  max-width: 400px;
   background: #f7cda3;
   text-align: center;
   border-radius: 10px;
-  /* padding: 10px; */
+  padding-bottom: 20px;
 }
-
 .welcome-btn {
   background-color: #c95349;
   color: #f4e5e4;
@@ -43,7 +50,7 @@
   font-size: 1.5em;
   margin: 10px 0;
   padding: 15px;
-  margin-bottom: 48px;
+  margin-bottom: 5px;
   border: 2px solid #c95349;
   transition: all 0.1s ease-in;
 }
@@ -66,20 +73,30 @@
   .welcome-info {
     font-size: 1.2em;
     padding: 15px;
+    line-height: 1.8em;
+    margin-bottom: 36px;
+    font-family: "Hind", sans-serif;
+  }
+  .welcome-btn {
+    font-size: 1.5em;
+    padding: 15px;
+    margin-bottom: 48px;
   }
 }
 
 @media only screen and (min-width: 750px) {
   .welcome-page {
-    padding-top: 40px;
+    padding-top: 10px;
     max-width: 1200px;
   }
   .welcome-header {
-    font-size: 25px;
+    width: 500px;
+    font-size: 1.8em;
+
   }
   .welcome-info {
     padding: 50px;
-    font-size: 24px;
+    font-size: 28px;
   }
   .welcome-text-container {
     max-width: 600px;
