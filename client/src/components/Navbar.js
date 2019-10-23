@@ -11,9 +11,9 @@ function Navbar(props) {
   }
   
   return (
-    <div onClick={() => props.history.push('/')} className="navbar">
-      <h1 className="navbar-title">Scatterbrain </h1>
-      <h3 className="navbar-subtitle">Spaced Learning Study Tool</h3>
+    <div className="navbar">
+      <h1 className="navbar-title" onClick={() => props.history.push('/')}>Scatterbrain </h1>
+      <h3 className="navbar-subtitle" >Spaced Learning Study Tool</h3>
       <button className = 'menu-button' onClick={()=>toggleMenu()}>Menu</button>
       {menu && <Menu  toggleMenu={toggleMenu} speed={200}/>}
     </div>
