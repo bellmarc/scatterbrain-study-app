@@ -1,31 +1,25 @@
 import React, { useState, useEffect }from 'react';
-import '../../style/TopicPage/TopicPage.css';
+import '../../style/TopicPage.css';
 import TopicList from './TopicList.js';
 import TopicInstructions from './TopicInstructions.js';
 import axios from 'axios';
 import StartSession from './StartSession.js';
 import TopicSelected from './TopicSelected.js';
-import userBrowser from '../../functions/User/Browser.js';
+import { get as getUser } from '../../functions/User/Browser.js';
 
-//dev user
-// {
-//     "_id": "5da91ba590e48b01c57fa30c",
-//     "name": "Dan"
-// }
 
 function TopicPage(props){
     const [ sessionConfirm, setSessionConfirm ] = useState({topic: {}, isStarting: false});
     const [ topicSelect, setTopicSelect ] = useState({topic: {}, isSelected: false});
     const [ topics, setTopics ] = useState([])
-
-    const currentUser = userBrowser.get();
-
+    const currentUser = getUser();
+    
     useEffect(() => {
-        getUserTopics(currentUser);
+        getUserTopics();
     },[])
 
-    const getUserTopics = user => {
-        axios.get(`/topics/${user._id}`)
+    const getUserTopics = () => {
+        axios.get(`/topics/${currentUser._id}`)
             .then(res => {
                 setTopics(res.data)
             })

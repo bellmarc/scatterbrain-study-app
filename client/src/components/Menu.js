@@ -1,45 +1,29 @@
-import React, {useState,useEffect} from 'react';
+import React from 'react';
 import '../style/menu.css';
 import { withRouter } from 'react-router-dom';
 import { clear as logout, get as isLoggedIn } from '../functions/User/Browser';
 
 const Menu = (props) => {
-  const [className , setClassName] = useState('menu menu-off')
+  const currentUser = isLoggedIn();
 
-  const push = (path) => {
-    setClassName ('menu menu-off');
-    setTimeout(() => {
-      props.history.push(path)
-      props.close()      
-    }
-    ,props.speed)
+  const handleLink = (path) => {
+    props.history.push(path);
+    props.toggleMenu()
   }
 
-  useEffect(() => {
-    setClassName( 'menu menu-on' )
-  },[]
-  )
-
-  return props.close ? (
-    <div className={className} style={{transition: `all ${props.speed}ms ease-out`}}>
-      <div className="header">
-
-      <button className="close-btn" onClick = { ()=>{
-          setClassName ('menu menu-off')
-          setTimeout(()=>props.close(),props.speed)
-        } }>⨯</button>
+  return (
+    <dialog open className="menu-container">
+      <div className='menu' style={{transition: `all ${props.speed}ms ease-out`}}>
+        <div className="menu-close-btn" onClick= {props.toggleMenu}>⨯</div>
+        <div className="menu-option" onClick={()=>handleLink('/topics')} >Topics</div>
+        <div className="menu-option" onClick={()=>handleLink('/help')} >Help</div>
+        {currentUser && <div className="menu-option" onClick={()=>{
+          logout()
+          handleLink('/')
+        }} >Log Out</div>}
       </div>
-      <button onClick = { ()=>push('/topics') } >Topics</button>
-      <button onClick = { ()=>push('/history') } >History</button>
-      <button onClick = { ()=>push('/settings') } >Settings</button>
-      <button onClick = { ()=>push('/help') } >Help</button>
-      {isLoggedIn() && <button onClick = { ()=>{
-        logout()
-        push('/landing')} } >Log Out</button>}
-    </div>
+    </dialog>
   )
-  : (<div className="menu">Write a close function to "close" menu then pass it to Menu props as "close"</div>);
-
 }
 
 export default withRouter(Menu)
