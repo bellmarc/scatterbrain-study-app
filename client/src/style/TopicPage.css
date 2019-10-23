@@ -25,10 +25,10 @@
 }
 /* buttons */
 .topic-smart-session {
-    margin: 10px 0;
-    padding: 10px;
+    margin: 20px 0;
+    padding: 15px;
     color: #f9f2f1;
-    font-size: 1.2em;
+    font-size: 1.8em;
     background: #c95349;
     border-radius: 10px;
     border: 2px solid #c95349;
@@ -149,36 +149,43 @@
 
 
 /* topic selected */
+.topic-selected-container {
+    position:relative;
+}
 .topic-page dialog .topic-selected-start {
     margin: 10px 0;
     padding: 10px;
-    color: #f9f2f1;
     font-size: 1.2em;
-    background: #c95349;
+    background: #4ac17e;
     border-radius: 10px;
     transition: all .1s ease-in;
-    border: 2px solid #c95349;
 }
 .topic-page dialog .topic-selected-start:hover {
-    background: #f9f2f1;
-    color: #c95349;
+    background: #ace2c4;
 }
-.topic-page dialog .edit-cancel {
+.topic-page dialog .edit-cancel, .topic-page dialog .topic-delete {
     background: #c95349;
     border: 2px solid #c95349;
     color: #f9f2f1;
 }
-.topic-page dialog .edit-cancel:hover {
+.topic-page dialog .edit-cancel:hover, .topic-page dialog .topic-delete:hover {
     color: #c95349;
     background: #f9f2f1;
 }
-.topic-page dialog .topid-cancel {
+.topic-page dialog .topic-cancel {
     background: #c95349;
     border: 2px solid #c95349;
     color: #f9f2f1;
 }
-.topic-page dialog .edit-cancel:hover {
+.topic-page dialog .topic-cancel:hover {
     color: #c95349;
+    background: #f9f2f1;
+}
+.topic-page dialog .topic-edit {
+    background: #b9bdc0;
+    border: 2px solid #b9bdc0;
+}
+.topic-page dialog .topic-edit:hover {
     background: #f9f2f1;
 }
 .topic-selected-buttons {
@@ -226,10 +233,6 @@
     .topic-page > section {
         padding: 20px;
         margin: 20px;
-    }
-    .topic-smart-session {
-        font-size: 1.8em;
-        padding: 15px;
     }
     .topic-new-topic {
         font-size: 1.2em;

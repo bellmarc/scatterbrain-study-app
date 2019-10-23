@@ -78,10 +78,10 @@ function TopicSelected(props){
                                 }}>New Session
                             </button>
                             <div className="topic-selected-buttons">
-                                <button onClick = {() => setEditingTopic(true)}>Edit</button>
+                                <button className="topic-edit"onClick = {() => setEditingTopic(true)}>Edit</button>
                                 <button className="topic-delete"onClick = {() => deleteTopic(topic._id)}>Delete</button>
-                                <button onClick = {handleGoBack}>Back</button>
                             </div>
+                            <div className="menu-close-btn"onClick = {handleGoBack}>⨯</div>
                         </div>
                     </dialog>
                 )
