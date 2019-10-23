@@ -15,11 +15,11 @@ function TopicPage(props){
     const currentUser = getUser();
     
     useEffect(() => {
-        getUserTopics();
+        currentUser ? getUserTopics(currentUser) : props.history.push('/');
     },[])
 
-    const getUserTopics = () => {
-        axios.get(`/topics/${currentUser._id}`)
+    const getUserTopics = (user) => {
+        axios.get(`/topics/${user._id}`)
             .then(res => {
                 setTopics(res.data)
             })

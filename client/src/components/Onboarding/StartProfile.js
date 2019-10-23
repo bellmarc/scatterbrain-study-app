@@ -17,9 +17,11 @@ const handleChange = (e) => {
         <form onSubmit={(e) =>  {
           e.preventDefault()
             userServer.add({ name: user })
-            .then(res => userBrowser.add(res))
-            .catch(err => console.log(err))
-            .then(props.history.push("/onboard/enterTopic"))
+              .then(res => {
+                userBrowser.add(res)
+                props.history.push("/onboard/enterTopic")
+              })
+              .catch(err => console.log(err))
           }} className="start-profile-form">
            <input className="start-profile-input" type="text" name="name" placeholder="Type your name" onChange={handleChange} value={user}/>
            <button

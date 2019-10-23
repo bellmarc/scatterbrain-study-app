@@ -1,6 +1,7 @@
 export const get = () => {
-    const user = JSON.parse(localStorage.getItem("user"))
-    return user ? user : false
+    const userJSON = localStorage.getItem("user")
+    const user =  userJSON ? JSON.parse(userJSON) : false;
+    return user
 }
 export const add = (user) => {
     localStorage.setItem("user",JSON.stringify(user))
