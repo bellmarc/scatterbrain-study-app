@@ -18,7 +18,7 @@
 .welcome-header {
   border-radius: 10px;
   background-color: #f9f2f1;
-  padding:40px;
+  padding: 40px;
   margin-top: 15px;
   margin-bottom: 60px;
 }
@@ -26,7 +26,7 @@
 .welcome-info {
   line-height: 1.5em;
   margin-bottom: 36px;
-  font-family: 'Hind', sans-serif;
+  font-family: "Hind", sans-serif;
 }
 .welcome-text-container {
   max-width: 500px;
@@ -45,7 +45,7 @@
   padding: 15px;
   margin-bottom: 48px;
   border: 2px solid #c95349;
-  transition: all .1s ease-in;
+  transition: all 0.1s ease-in;
 }
 .welcome-btn:hover {
   background-color: #f4e5e4;
@@ -78,7 +78,7 @@
     font-size: 25px;
   }
   .welcome-info {
-    padding:50px;
+    padding: 50px;
     font-size: 24px;
   }
   .welcome-text-container {

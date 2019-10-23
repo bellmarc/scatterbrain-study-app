@@ -4,51 +4,82 @@
   align-items: center;
   padding: 10px;
   height: 100%;
-  max-width: 100%;
+  max-width: 900px;
+  margin: auto;
   background-color: #f9f2f1;
 }
 
 .start-profile-header {
-  margin-top: 30px;
-  margin-bottom: 15px;
+  font-size: 40px;
+  padding-top: 30px;
+  padding-bottom: 15px;
 }
 
 .start-profile-subheader {
-  font-family: 'Hind', sans-serif;
-  font-size:20px;
+  font-family: "Hind", sans-serif;
+  font-size: 20px;
 }
 
 .start-profile-text-container {
-  text-align: center;
   background: #f7cda3;
   border-radius: 10px;
-  padding: 10px;
+  margin-top: 30px;
+  padding: 40px;
+  text-align: center;
 }
 .start-profile-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
   margin-bottom: 20px;
 }
 .start-profile-input {
-  font-family: 'Hind', sans-serif;
+  font-family: "Hind", sans-serif;
   padding: 6px;
-  font-size:18px;
+  font-size: 18px;
   margin-top: 20px;
   margin-bottom: 25px;
-  border:none;
+  border: none;
 }
 
 .start-profile-btn {
   background-color: #c95349;
-  color:#f4e5e4;
+  color: #f4e5e4;
   border-radius: 10px;
   font-size: 1.5em;
   margin: 10px;
   padding: 15px;
   border: 2px solid #c95349;
-  transition: all .1s ease-in;
+  transition: all 0.1s ease-in;
 }
 
 .start-profile-btn:hover {
-  background-color:#f4e5e4;
+  background-color: #f4e5e4;
   color: #c95349;
+}
+
+@media only screen and (min-height: 750px) {
+  .start-profile-header {
+    padding: 0px;
+    font-size: 3em;
+  }
+
+  .start-profile-subheader {
+    padding: 25px;
+    font-size: 1.8em;
+  }
+  .start-profile-input {
+    font-size: 22px;
+  }
+  .start-profile-text-container {
+    margin-top: 60px;
+    padding: 80px;
+    max-width: 1200px;
+  }
+  .start-profile-btn {
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 2em;
+  }
 }
