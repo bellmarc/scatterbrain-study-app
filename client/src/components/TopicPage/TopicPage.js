@@ -49,7 +49,7 @@ function TopicPage(props){
         setTopicSelect({topic: selectedTopic, isSelected: true})
     }
     const deleteTopic = topicId => {
-        const confirm = window.confirm(`Are you sure?`)
+        const confirm = window.confirm(`Are you sure you want to delete that topic?`)
         if (confirm) {
             axios.delete(`/topics/${currentUser._id}/${topicId}`)
             .then(res => {
