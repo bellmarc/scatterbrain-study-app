@@ -17,7 +17,7 @@ function App() {
                 <Route path="/topics" component={ TopicsPage }/>
                 <Route path="/session/:topicId" component={ InSession }/>
                 <Route path="/settings" component={ Settings }/>
-                <Route path="/help" component={ Help }/>
+                {/* <Route path="/help" component={ Help }/> */}
                 <Route path="/onboard" component={ Onboarding }/>
                 <Route exact path="/" component={ Landing }/>
             </Switch>

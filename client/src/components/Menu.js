@@ -16,7 +16,7 @@ const Menu = (props) => {
       <div className='menu' >
         <div className="menu-close-btn" onClick= {props.toggleMenu}>⨯</div>
         <div className="menu-option" onClick={()=>handleLink('/topics')} >Topics</div>
-        <div className="menu-option" onClick={()=>handleLink('/help')} >Help</div>
+        {/* <div className="menu-option" onClick={()=>handleLink('/help')} >Help</div> */}
         {currentUser && <div className="menu-option" onClick={()=>{
           logout()
           handleLink('/')
