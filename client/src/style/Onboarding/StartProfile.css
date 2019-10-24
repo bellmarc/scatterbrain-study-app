@@ -69,8 +69,8 @@
     font-size: 3em;
   }
   .start-profile-subheader {
-    padding: 25px;
-    font-size: 1.8em;
+    padding: 30px;
+    font-size: 2.2em;
   }
   .start-profile-input {
     font-size: 22px;
@@ -81,8 +81,8 @@
     padding-bottom: 0px;
   }
   .start-profile-btn {
-    margin-top: 40px;
+    margin-top: 30px;
     padding: 20px;
-    font-size: 2em;
+    font-size: 1.6em;
   }
 }

@@ -6,7 +6,8 @@ function TopicList(props){
 
     const mappedTopics = topics.map(topic => (
         <TopicCard 
-            topic = {topic} 
+            topic = {topic}
+            deleteTopic = {props.deleteTopic}
             handleSelectTopic = {handleSelectTopic} 
             key = {topic._id} 
         />

@@ -85,6 +85,16 @@
 .topic-card:hover {
     background: #4ac17e;
 }
+.topic-card div {
+    width: 100%;
+}
+.topic-card i{
+    color: #0e2723;
+    margin-right: 5px;
+}
+.topic-card i:hover {
+    color: #c95349;
+}
 
 /* dialogs */
 .topic-page dialog{

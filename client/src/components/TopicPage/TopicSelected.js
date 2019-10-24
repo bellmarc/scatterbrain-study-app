@@ -79,7 +79,6 @@ function TopicSelected(props){
                             </button>
                             <div className="topic-selected-buttons">
                                 <button className="topic-edit"onClick = {() => setEditingTopic(true)}>Edit</button>
-                                <button className="topic-delete"onClick = {() => deleteTopic(topic._id)}>Delete</button>
                             </div>
                             <div className="menu-close-btn"onClick = {handleGoBack}>⨯</div>
                         </div>

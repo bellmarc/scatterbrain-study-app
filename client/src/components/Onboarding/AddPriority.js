@@ -28,7 +28,6 @@ function AddPriority(props) {
     axios.put(`/topics/${currentUser._id}/${topicId}`,
     { priority: Number(priority),  currentWeight: Number(priority) })
     .then(res => {
-      console.log(res)
       props.history.push("/onboard/redirect")// redirect
     })
      .catch(err => console.log(err))

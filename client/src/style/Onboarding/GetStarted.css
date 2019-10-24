@@ -20,12 +20,12 @@
 .topic-text {
   font-size: 14px;
   line-height: 1.8;
-  font-family: 'Hind', sans-serif;
+  font-family: "Hind", sans-serif;
   padding: 5px;
 }
 .priority-text {
   font-size: 14px;
-  font-family: 'Hind', sans-serif;
+  font-family: "Hind", sans-serif;
   line-height: 1.8;
   padding: 5px;
 }
@@ -42,7 +42,7 @@
 
 .get-started-btn {
   background-color: #c95349;
-  color:#f4e5e4;
+  color: #f4e5e4;
   border-radius: 10px;
   font-size: 1.2em;
   margin: 25px 0;
@@ -50,28 +50,51 @@
   width: 100px;
   padding: 15px;
   border: 2px solid #c95349;
-  transition: all .1s ease-in;
+  transition: all 0.1s ease-in;
 }
 
 .get-started-btn:hover {
-  background-color:#f4e5e4;
+  background-color: #f4e5e4;
   color: #c95349;
 }
 
 @media only screen and (min-width: 500px) {
-  .priority-text, .topic-text {
-    padding: 35px;
+  .get-started-page {
+    padding-top: 30px;
+  }
+  .priority-text,
+  .topic-text {
+    padding: 25px;
+    font-size: 16px;
   }
 }
 
-@media only screen and (min-height: 750px) {
-  .get-started-page  {
-    padding: 30px;
-    padding-top: 40px;
+@media only screen and (min-width: 750px) {
+  .get-started-page {
+    padding: 50px;
+    padding-top: 5px;
     max-width: 1200px;
+  }
+  .get-started-text-container {
+    width: 800px;
+    margin: auto;
+  }
+  .priority-text,
+  .topic-text {
+    padding: 30px;
+    font-size: 22px;
   }
   .get-started-header {
     padding-top: 30px;
-    font-size: 3.0em;
+    font-size: 3em;
+  }
+  .priority-header,
+  .topic-header {
+    font-size: 2em;
+    padding: 15px;
+  }
+  .get-started-btn  {
+    width: 120px;
+    font-size: 2em;
   }
 }
