@@ -41,10 +41,32 @@
   border-radius: 10px;
   border: none;
 }
+
 .priority-input {
-  padding: 20px;
+  background-color: #f4e5e4;
+  color: #0e2723;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  padding: auto;
   font-size: 1.8em;
   border: none;
+}
+.divider {
+  width:15px;
+  height:auto;
+  display:inline-block;
+}
+.active-btn {
+
+  background-color: #4ac17e;
+  color: #f4e5e4;
+}
+
+.priority-input:hover {
+  background-color: #ace2c4;
+  color: #0e2723;
+
 }
 .add-button {
   background: none;
@@ -59,7 +81,7 @@
   font-size: 1.2em;
   padding: 10px;
   width: 110px;
-  max-height: 100px;
+  max-height: 60px;
   border: 2px solid #c95349;
   transition: all 0.1s ease-in;
 }
@@ -74,9 +96,22 @@
   color: #0e2723;
 }
 @media only screen and (min-width: 500px) {
+  .add-priority-header {
+    padding-top: 10px;
+  }
   .add-priority-text {
     max-width: 500px;
     width: 80%;
+  }
+  .priority-btn-container {
+    padding: 50px;
+  }
+  .priority-form {
+    padding-top: 10px;
+  }
+  .add-priority-btn {
+    height: 60px;
+    margin-top: 20px;
   }
 }
 @media only screen and (min-width: 750px) {

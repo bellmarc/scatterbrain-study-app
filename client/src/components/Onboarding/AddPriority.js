@@ -7,26 +7,21 @@ function AddPriority(props) {
   const[priority, setPriority] = useState(0)
   const topicId = props.match.params.topicId
   const currentUser = userBrowser.get()
+  const style = {
+    active: "priority-input active-btn",
+    inactive: "priority-input"
+  }
+
 
   useEffect(() => {
     if (!currentUser) props.history.push('/');
   },[])
 
   const handleChange = (e) => {
+    console.dir(e.target.textContent);
     e.preventDefault()
-    setPriority(e.target.value)
+    setPriority(e.target.textContent)
   }
-
-  const increment = (e)=> { e.preventDefault()
-    if (priority < 5 ){
-      setPriority(priority + 1)
-  }}
-
-  const decrement = (e)=> { e.preventDefault()
-    if (priority > 0 ){
-      setPriority(priority - 1)
-  }}
-
 
   const updateTopicWithPriority = (e) => {
     e.preventDefault()
@@ -49,23 +44,28 @@ function AddPriority(props) {
           updateTopicWithPriority
         } className="priority-form">
         <div className="priority-btn-container">
-          <button className="minus-button" type="minus-button" onClick={decrement}>
-            <b>-</b>
-          </button>
-          <input
-            className="priority-input"
-            type="number"
-            name="quantity"
-            min="1"
-            max="5"
-            placeholder="Type your number"
-            onChange={handleChange}
-            value={priority}
-          ></input>
-          <button className="add-button" type="add-button" onClick={increment}>
-            <b>+</b>
-          </button>
+          <button className={priority==="1"?style.active:style.inactive} 
+            onClick={handleChange} >1</button>
+
+          <div class="divider"/>
+          <button className={priority==="2"?style.active:style.inactive} 
+            onClick={handleChange} >2</button>
+
+          <div class="divider"/>
+          <button className={priority==="3"?style.active:style.inactive} 
+            onClick={handleChange} >3</button>
+
+          <div class="divider"/>
+          <button className={priority==="4"?style.active:style.inactive} 
+            onClick={handleChange} >4</button>
+
+          <div class="divider"/>
+          <button className={priority==="5"?style.active:style.inactive}
+            onClick={handleChange} >5</button>
+
+          <div class="divider"/>
         </div>
+
             <button className="add-priority-btn">
                 Add
             </button>
