@@ -38,6 +38,7 @@
     transition: all .1s ease-in;
     background: rgba(232,232,232,.5);
     padding: 5px;
+    margin-top: 15px;
     border-radius: 8px;
 }
 .menu-option:hover {
