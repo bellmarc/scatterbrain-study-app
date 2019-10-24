@@ -42,8 +42,8 @@
   border: none;
 }
 .priority-input {
-  padding: 25px;
-  font-size: 1em;
+  padding: 20px;
+  font-size: 1.8em;
   border: none;
 }
 .add-button {
@@ -73,9 +73,24 @@
   font-size: 5em;
   color: #0e2723;
 }
-
+@media only screen and (min-width: 500px) {
+  .add-priority-text {
+    max-width: 500px;
+    width: 80%;
+  }
+}
 @media only screen and (min-width: 750px) {
   .add-priority-page {
     max-width: 1200px;
+  }
+  .add-priority-text {
+    margin-top: 40px;
+   padding-bottom: 40px;
+  }
+  .add-priority-header{
+    padding: 40px;
+  }
+  .priority-form {
+    padding: 40px;
   }
 }

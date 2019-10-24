@@ -68,7 +68,6 @@
     padding: 0px;
     font-size: 3em;
   }
-
   .start-profile-subheader {
     padding: 25px;
     font-size: 1.8em;
@@ -79,6 +78,7 @@
   .start-profile-text-container {
     margin-top: 60px;
     padding: 80px;
+    padding-bottom: 0px;
   }
   .start-profile-btn {
     margin-top: 40px;
