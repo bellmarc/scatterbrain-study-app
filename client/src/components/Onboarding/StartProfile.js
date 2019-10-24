@@ -23,7 +23,7 @@ const handleChange = (e) => {
               })
               .catch(err => console.log(err))
           }} className="start-profile-form">
-           <input className="start-profile-input" type="text" name="name" placeholder="Type your name" onChange={handleChange} value={user}/>
+           <input className="start-profile-input" type="text" name="name" placeholder="Type your name" onChange={handleChange} value={user} required/>
            <button
           className="start-profile-btn"
         >
