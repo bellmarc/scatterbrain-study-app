@@ -22,22 +22,15 @@ const InSession = (props) => {
   useEffect(getTopic,[])
 
   const stopSession = () => {
-    Axios.put(`/topics/sessionComplete/${currentUser._id}`, {topicId: topicId})
+    const confirm = window.confirm('Are you sure you want to end your session?')
+    if (confirm) {
+      Axios.put(`/topics/sessionComplete/${currentUser._id}`, {topicId: topicId})
       .then(res => {
         props.history.push('/topics')
       })
       .catch(err => console.error(err))
-    // setDone({ 
-    //   save: function () {
-    //     props.history.push(`/topics`)
-    //     // props.history.push(`/topics/${
-    //     // time.hours}/${
-    //     // time.minutes}/${
-    //     // time.seconds}`)
-    //   } 
-    // })
+    }
   }
-
 
   return (
     <main className="session-page">

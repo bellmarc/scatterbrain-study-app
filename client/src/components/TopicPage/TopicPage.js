@@ -36,14 +36,22 @@ function TopicPage(props){
 
     const handleSmartSession = userId => {
         axios.get(`/topics/pick/${userId}`)
-            .then(res => setSessionConfirm({topic: res.data, isStarting: true}))
+            .then(res => {
+                if (res.data.topic){
+                setSessionConfirm({topic: res.data, isStarting: true})
+                } else {
+                    window.alert("You don't have any topics!")
+                }
+            })
             .catch(err => console.log(err))
     }
     const handleSelectTopic = selectedTopic => {
         setTopicSelect({topic: selectedTopic, isSelected: true})
     }
     const deleteTopic = topicId => {
-        axios.delete(`/topics/${currentUser._id}/${topicId}`)
+        const confirm = window.confirm(`Are you sure?`)
+        if (confirm) {
+            axios.delete(`/topics/${currentUser._id}/${topicId}`)
             .then(res => {
                 setTopics(prevTopics => {
                     const indexToDelete = prevTopics.findIndex(topic => topic._id === res.data._id)
@@ -53,6 +61,7 @@ function TopicPage(props){
                 setTopicSelect({topic:{}, isSelected: false})
             })
             .catch(err => console.error(err))
+        }
     }
 
     return (
@@ -62,6 +71,7 @@ function TopicPage(props){
             <TopicList
                 handleSelectTopic = {handleSelectTopic}
                 topics = {topics}
+                deleteTopic = {deleteTopic}
             />
             {sessionConfirm.isStarting &&
                 <StartSession
