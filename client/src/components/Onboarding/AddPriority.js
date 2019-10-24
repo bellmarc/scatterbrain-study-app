@@ -52,10 +52,15 @@ function AddPriority(props) {
         } className="priority-form">
         <div className="priority-btn-container">
           <button className="priority-input" onClick={handleChange} >1</button>
+          <div class="divider"/>
           <button className="priority-input" onClick={handleChange} >2</button>
+          <div class="divider"/>
           <button className="priority-input" onClick={handleChange} >3</button>
+          <div class="divider"/>
           <button className="priority-input" onClick={handleChange} >4</button>
-          <button className="priority-input" onClick={handleChange} >5</button>
+          <div class="divider"/>
+          <button className="priority-input active-btn" onClick={handleChange} >5</button>
+          <div class="divider"/>
         </div>
 
         {/* <div className="priority-btn-container">
