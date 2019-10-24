@@ -35,7 +35,7 @@ function EnterTopic(props) {
           e.preventDefault()
           addNewTopic()
          }} className="enter-topic-form">
-          <input className="enter-topic-input" type="text" name="name" placeholder="Type your topic" onChange={handleChange} value={topic}/>
+          <input className="enter-topic-input" type="text" name="name" placeholder="Type your topic" onChange={handleChange} value={topic} required/>
         <button
         className="enter-topic-btn"
         >
