@@ -13,8 +13,9 @@ function AddPriority(props) {
   },[])
 
   const handleChange = (e) => {
+    console.dir(e.target.textContent);
     e.preventDefault()
-    setPriority(e.target.value)
+    setPriority(e.target.textContent)
   }
 
   const increment = (e)=> { e.preventDefault()
@@ -50,6 +51,14 @@ function AddPriority(props) {
           updateTopicWithPriority
         } className="priority-form">
         <div className="priority-btn-container">
+          <button className="priority-input" onClick={handleChange} >1</button>
+          <button className="priority-input" onClick={handleChange} >2</button>
+          <button className="priority-input" onClick={handleChange} >3</button>
+          <button className="priority-input" onClick={handleChange} >4</button>
+          <button className="priority-input" onClick={handleChange} >5</button>
+        </div>
+
+        {/* <div className="priority-btn-container">
           <button className="minus-button" type="minus-button" onClick={decrement}>
             <b>-</b>
           </button>
@@ -66,7 +75,7 @@ function AddPriority(props) {
           <button className="add-button" type="add-button" onClick={increment}>
             <b>+</b>
           </button>
-        </div>
+        </div> */}
             <button className="add-priority-btn">
                 Add
             </button>
