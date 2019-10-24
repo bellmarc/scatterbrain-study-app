@@ -6,15 +6,14 @@
     padding: 10px;
     background: #99362D;
     color:#f9f2f1;
-    border-bottom: 3px solid #0e2723;
 }
 .navbar-title {
-    font-size: 2.5em;
+    font-size: 1.4em;
     font-family: 'Acme', sans-serif;
     font-style: italic;
 }
 .navbar-subtitle {
-    font-size: .8em;
+    font-size: .7em;
     font-weight: 400;
     font-family: 'Montserrat', sans-serif;
     font-style: initial;
@@ -39,12 +38,12 @@
 
 @media only screen and (min-width: 450px) {
     .navbar {
-        padding: 25px;
+        padding: 15px;
     }
     .navbar-title {
-        font-size: 3em;
+        font-size: 2em;
     }
     .navbar-subtitle{
-        font-size: 1.2em;
+        font-size: 1em;
     } 
 }

@@ -29,8 +29,9 @@
   border-radius: 10px;
 }
 .img-congrats {
-  max-width: 60%;
+  max-width: 50%;
   height: auto;
+  padding:5px;
 }
 .profile-complete-input {
   width: 200px;
@@ -72,5 +73,11 @@
     padding: 30px;
     padding-bottom: 60px;
     width: 700px;
+  }
+
+  .img-congrats-container {
+    padding: 60px;
+    padding-bottom: 30px;
+
   }
 }

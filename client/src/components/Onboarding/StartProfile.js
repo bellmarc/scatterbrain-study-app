@@ -27,7 +27,7 @@ const handleChange = (e) => {
            <button
           className="start-profile-btn"
         >
-          Get Started
+          Submit
         </button>
         </form>
       </section>
