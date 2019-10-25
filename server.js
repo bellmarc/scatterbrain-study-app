@@ -1,4 +1,5 @@
 require('dotenv').config()
+const path = require("path")
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
@@ -11,6 +12,7 @@ const MONGO_DB = process.env.MONGO_DB
 
 app.use(express.json());
 app.use(morgan('dev'));
+app.use(express.static(path.join(__dirname, "client", "build")))
 
 //DB
 mongoose.connect(`mongodb+srv://${MONGO_USER}:${MONGO_PASS}@${MONGO_HOST}/${MONGO_DB}?retryWrites=true&w=majority`,
@@ -36,6 +38,9 @@ app.use((err, req, res, next)=> {
 
 
 //listen
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
 app.listen(PORT, () => console.log(`Server running on ${PORT}`))
 
 

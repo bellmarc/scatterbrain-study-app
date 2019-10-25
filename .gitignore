@@ -62,3 +62,8 @@ typings/
 
 # Mac
 .DS_Store
+
+#other
+*.orig
+.idea/
+.vscode/
