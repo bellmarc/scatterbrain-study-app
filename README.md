@@ -9,8 +9,10 @@ description: View the slide with "Slide Mode".
 <!-- Put the link to this slide here so people can follow -->
 slide: https://hackmd.io/p/template-talk-slide
 ---
-<img src="https://i.imgur.com/SLRN0hC.png" width="640" height="480"/>
+<img src="https://i.imgur.com/SLRN0hC.png" width="542" height="480"/>
 ---
+
+
 ### What We Built:
 A study management tool focused on students and professionals looking to mantain or learn new skills.
 Users can prioritize topics and the app will keep track and help them decide where to spend their time studying. A weighted algorithm takes users input on topic priority and offers a topic for users to study for that session.
