@@ -1,68 +1,62 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
+title: Scatterbrain Team Project
+tags: Templates, Talk
+description: View the slide with "Slide Mode".
+---
 
-## Available Scripts
+# Scatterbrain Study Tool Group Project
 
-In the project directory, you can run:
+<!-- Put the link to this slide here so people can follow -->
+slide: https://hackmd.io/p/template-talk-slide
 
-### `yarn start`
+---
+### What We Built:
+A study management tool focused on students and professionals looking to mantain or learn new skills.
+Users can prioritize topics and the app will keep track and help them decide where to spend their time studying. A weighted algorithm takes users input on topic priority and offers a topic for users to study for that session.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## We are a Three person team of Full-Stack Software Engineers
 
-### `yarn test`
+- Technologies include: React.js, Express, Node.js, mongoose, and MongoDB
+- Collaborated with User Experience Designers, we conducted user testing throughout the project lifecycle, user flows, and hand-drawn wireframing in the inital stages.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `yarn build`
+### MVP(Minimum Viable Product):
+- Build a responsive full-stack web app with a user-friendly onboarding process, list of topics in user dashboard, timed study sessions, and slide out/in navigation bar.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Mind-Map
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![](https://i.imgur.com/RG1rIaO.jpg)
 
-### `yarn eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### User stories
+- User engaging in onboarding process to select topics and prioritize them. For prioritization, the user has the ability to opt out during the onboarding. User is notifed they will have the option to apply a priority later.
+- After onboarding, user is prompted to click 'Session' button to enter a Study Session page or user can manually choose topic they'd like to focus-on.
+- Once in a Session, user has a timer countdown while they complete their study.
+- User is able to return to the dashboard and may edit/delete topic(s) as necessary.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+##### Other features to be added:
+- User Login Profile Settings
+- Design Revamp for app interface.
 
-## Learn More
+---
+### Wrap up
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Scatterbrain is a study tool to help learners who can't decide a topic to study since they may have many items to learn. This tool will help users manage their study goals.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+### View Scatterbrain Study Tool App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
+-  [Live Scatterbrain](https://scatterbrainstudytool.herokuapp.com/)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+- [GitHub](https://github.com/bellmarc)
 
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
