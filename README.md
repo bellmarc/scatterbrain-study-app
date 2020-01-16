@@ -10,11 +10,10 @@ description: View the slide with "Slide Mode".
 slide: https://hackmd.io/p/template-talk-slide
 ---
 <img src="https://i.imgur.com/SLRN0hC.png" width="542" height="480"/>
----
 
 
 ### What We Built:
-A study management tool focused on students and professionals looking to mantain or learn new skills.
+A study management tool focused on students and professionals looking to maintain or learn new skills.
 Users can prioritize topics and the app will keep track and help them decide where to spend their time studying. A weighted algorithm takes users input on topic priority and offers a topic for users to study for that session.
 
 ---
@@ -22,12 +21,12 @@ Users can prioritize topics and the app will keep track and help them decide whe
 ## We are a Three person team of Full-Stack Software Engineers
 
 - Technologies include: React.js, Express, Node.js, mongoose, and MongoDB
-- Collaborated with User Experience Designers, we conducted user testing throughout the project lifecycle, user flows, and hand-drawn wireframing in the inital stages.
+- Collaborated with User Experience Designers, we conducted user testing throughout the project life cycle, user flows, and hand-drawn wireframing in the initial stages.
 
 ---
 
 ### MVP(Minimum Viable Product):
-- Build a responsive full-stack web app with a user-friendly onboarding process, list of topics in user dashboard, timed study sessions, and slide out/in navigation bar.
+- Build a responsive full-stack web app with a user-friendly on-boarding process, list of topics in user dashboard, timed study sessions, and slide out/in navigation bar.
 
 ---
 
@@ -38,8 +37,8 @@ Mind-Map
 ---
 
 ### User stories
-- User engaging in onboarding process to select topics and prioritize them. For prioritization, the user has the ability to opt out during the onboarding. User is notifed they will have the option to apply a priority later.
-- After onboarding, user is prompted to click 'Session' button to enter a Study Session page or user can manually choose topic they'd like to focus-on.
+- User engaging in on-boarding process to select topics and prioritize them. For prioritization, the user has the ability to opt out during the on-boarding. User is notified they will have the option to apply a priority later.
+- After on-boarding, user is prompted to click 'Session' button to enter a Study Session page or user can manually choose topic they'd like to focus-on.
 - Once in a Session, user has a timer countdown while they complete their study.
 - User is able to return to the dashboard and may edit/delete topic(s) as necessary.
 
